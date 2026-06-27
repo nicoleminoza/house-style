@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { hasSupabase } from '@/lib/env'
 import { createClient } from '@/lib/supabase/client'
+import { Logo } from '@/components/Logo'
 
 function nextParam() {
   if (typeof window === 'undefined') return '/'
@@ -50,7 +51,8 @@ export default function SignInPage() {
 
   return (
     <main className="mx-auto max-w-md px-6 py-20">
-      <h1 className="font-serif text-3xl font-medium tracking-tight text-ink">
+      <Logo className="h-12 w-12" />
+      <h1 className="mt-5 font-serif text-3xl font-medium tracking-tight text-ink">
         Sign in
       </h1>
       <p className="mt-3 text-[15px] leading-relaxed text-muted">

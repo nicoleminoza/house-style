@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { hasSupabase } from '@/lib/env'
 import { getIsAuthed } from '@/lib/prompts'
 import { AuthControls } from './AuthControls'
+import { Logo } from './Logo'
 
 // Public nav. The private Dashboard is added only for signed-in viewers below.
 const NAV = [
@@ -17,11 +18,12 @@ export async function SiteHeader() {
   return (
     <header className="sticky top-0 z-20 border-b border-line bg-canvas/85 backdrop-blur supports-[backdrop-filter]:bg-canvas/70">
       <div className="mx-auto flex max-w-shell items-center justify-between px-6 py-4">
-        <Link href="/" className="ring-focus rounded-sm">
+        <Link href="/" className="ring-focus flex items-center gap-2 rounded-sm">
+          <Logo className="h-7 w-7 shrink-0" />
           <span className="font-serif text-lg font-medium tracking-tight text-ink">
             House&nbsp;Style
           </span>
-          <span className="ml-2 hidden text-xs text-faint sm:inline">
+          <span className="ml-1 hidden text-xs text-faint sm:inline">
             Prompts with a point of view
           </span>
         </Link>
