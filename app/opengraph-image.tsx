@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og'
 
 export const alt =
-  'House Style. Curated AI prompts for marketing, brand, and product leaders.'
+  'House Style. AI prompts for marketing, brand, and product leaders.'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -16,7 +16,7 @@ export default function OpengraphImage() {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
-          background: '#F6F6F4',
+          background: '#faf6f1',
           padding: '90px',
         }}
       >
@@ -29,8 +29,8 @@ export default function OpengraphImage() {
               width: '108px',
               height: '108px',
               borderRadius: '22px',
-              background: '#6B2C41',
-              color: '#FAF6F1',
+              background: '#6b2c41',
+              color: '#faf6f1',
               fontSize: '78px',
               fontWeight: 700,
               fontFamily: 'Georgia, serif',
@@ -43,7 +43,7 @@ export default function OpengraphImage() {
               display: 'flex',
               fontSize: '76px',
               fontWeight: 600,
-              color: '#111111',
+              color: '#241f1d',
               fontFamily: 'Georgia, serif',
               letterSpacing: '-0.02em',
             }}
@@ -57,7 +57,7 @@ export default function OpengraphImage() {
             display: 'flex',
             marginTop: '40px',
             fontSize: '40px',
-            color: '#6B6B66',
+            color: '#5d534c',
           }}
         >
           Prompts with a point of view.
@@ -67,18 +67,18 @@ export default function OpengraphImage() {
             display: 'flex',
             marginTop: '14px',
             fontSize: '32px',
-            color: '#6B6B66',
+            color: '#5d534c',
             maxWidth: '900px',
           }}
         >
-          Curated AI prompts for marketing, brand, and product leaders.
+          AI prompts for marketing, brand, and product leaders.
         </div>
         <div
           style={{
             display: 'flex',
             marginTop: '48px',
             fontSize: '26px',
-            color: '#8A2B1E',
+            color: '#6b2c41',
             fontWeight: 500,
           }}
         >

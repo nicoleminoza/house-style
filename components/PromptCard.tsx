@@ -11,7 +11,7 @@ import { QualitySignal } from './QualitySignal'
 const CATEGORY_BADGE: Record<string, string> = {
   'PMM/GTM': 'bg-canvas text-ink border border-line',
   Executive: 'bg-accent-tint text-accent',
-  'AI & Creative Tools': 'bg-[#E7ECEE] text-[#33414A]',
+  'AI & Creative Tools': 'bg-[#e8e2d6] text-[#5a4a52]',
 }
 
 // The whole curated library is public and instantly copyable. The Tier-2 gate
@@ -53,7 +53,7 @@ export function PromptCard({
     >
       <div className="flex items-start justify-between gap-3">
         <span
-          className={`inline-flex items-center rounded px-2 py-0.5 text-[11px] font-medium ${
+          className={`inline-flex items-center rounded px-2 py-0.5 font-mono text-[10px] font-medium uppercase tracking-[0.08em] ${
             CATEGORY_BADGE[prompt.category] ?? 'bg-canvas text-ink'
           }`}
         >

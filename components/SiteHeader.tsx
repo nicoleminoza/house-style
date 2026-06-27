@@ -26,9 +26,6 @@ export async function SiteHeader() {
           <span className="font-serif text-lg font-medium tracking-tight text-ink">
             House&nbsp;Style
           </span>
-          <span className="ml-1 hidden text-xs text-muted sm:inline">
-            Prompts with a point of view
-          </span>
         </Link>
 
         <nav className="flex min-w-0 items-center gap-1 overflow-x-auto whitespace-nowrap pl-2 text-sm [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">

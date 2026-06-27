@@ -113,7 +113,8 @@ export const prompts: Prompt[] = [
     title: 'Landing page copy',
     category: 'PMM/GTM',
     tags: ['copy', 'conversion', 'content'],
-    description: 'High-converting page copy structured around one action.',
+    description:
+      'Page copy built around one action, every line making a claim or earning the next.',
     prompt: `Role: Act as a conversion copywriter for [PRODUCT], page goal [GOAL], audience [AUDIENCE], who eradicates weak verbs and vague superlatives. Write: a hero headline + subhead that names the outcome (3 options); 3 benefit sections, each with a sub-head and 2 lines of proof; a social-proof block; an objection-handling FAQ of 4 questions; and one primary CTA, repeated consistently. Every line makes a claim or earns the next. Calibration: vague: "powerful tools to help you grow." → claim: "[the specific outcome, with the proof]."`,
   },
   {

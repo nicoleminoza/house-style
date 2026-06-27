@@ -1,6 +1,5 @@
 import { Catalog } from '@/components/Catalog'
 import { getCatalogForClient, getIsAuthed } from '@/lib/prompts'
-import { isHero } from '@/lib/heroes'
 
 // Server Component: payloads are resolved (and gated) on the server before any
 // markup reaches the browser. Locked premium payloads are never serialized.
@@ -9,48 +8,36 @@ export default async function HomePage() {
     getCatalogForClient(),
     getIsAuthed(),
   ])
-  const heroCount = prompts.filter((p) => isHero(p.slug)).length
 
   return (
     <main className="mx-auto max-w-shell px-6">
       <section className="border-b border-line py-14">
-        <h1 className="font-serif text-5xl font-medium tracking-tight text-ink">
+        <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-accent-2">
+          A project by{' '}
+          <a
+            href="https://nicoleminoza.com"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-accent"
+          >
+            Nicole Miñoza
+          </a>
+        </p>
+        <h1 className="mt-3 font-serif text-5xl font-medium tracking-tight text-ink">
           House Style
         </h1>
-        <p className="mt-3 font-serif text-xl text-muted">
+        <p className="mt-2 font-serif text-xl italic text-muted">
           Prompts with a point of view.
         </p>
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted">
-          Curated AI prompts for marketing, brand, and product leaders.
-        </p>
-        <p className="mt-2 text-base font-medium text-ink">
-          Curation is the product.
+          AI prompts for marketing, brand, and product leaders. Free, no login.
         </p>
 
-        <div className="mt-6 space-y-1 text-sm text-muted">
-          <p>
-            {prompts.length} prompts across 3 categories, including {heroCount}{' '}
-            hero frameworks · Free, no login
-          </p>
-          <p>
-            A project by{' '}
-            <a
-              href="https://nicoleminoza.com"
-              target="_blank"
-              rel="noreferrer"
-              className="text-muted underline decoration-line underline-offset-4 hover:text-accent"
-            >
-              Nicole Miñoza
-            </a>
-          </p>
-        </div>
-
-        <p className="mt-4 text-sm text-muted">
-          Want to use one?{' '}
+        <p className="mt-6 font-mono text-xs text-muted">
+          {prompts.length} prompts, 3 categories ·{' '}
           <a href="/demo" className="text-accent hover:underline">
-            Open the Sandbox
-          </a>{' '}
-          to fill in the variables and save your version.
+            Open the Sandbox →
+          </a>
         </p>
       </section>
 

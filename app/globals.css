@@ -17,7 +17,7 @@
   }
 
   /* WCAG 2.1 AA: a clearly visible keyboard focus indicator on every
-     interactive element. 2px oxblood outline with a small offset. */
+     interactive element. 2px plum outline with a small offset. */
   a:focus-visible,
   button:focus-visible,
   input:focus-visible,
@@ -25,7 +25,7 @@
   select:focus-visible,
   summary:focus-visible,
   [tabindex]:focus-visible {
-    outline: 2px solid #8a2b1e;
+    outline: 2px solid #6b2c41;
     outline-offset: 2px;
     border-radius: 3px;
   }

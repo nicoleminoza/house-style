@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Fraunces, Inter } from 'next/font/google'
+import { Newsreader, Hanken_Grotesk, Spline_Sans_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import './globals.css'
 import { PostHogProvider } from '@/components/PostHogProvider'
@@ -9,22 +9,29 @@ import { Footer } from '@/components/Footer'
 import { AuthEvents } from '@/components/AuthEvents'
 import { getIsAuthed } from '@/lib/prompts'
 
-const fraunces = Fraunces({
+const newsreader = Newsreader({
   subsets: ['latin'],
   weight: ['400', '500', '600'],
-  variable: '--font-fraunces',
+  style: ['normal', 'italic'],
+  variable: '--font-newsreader',
   display: 'swap',
 })
-const inter = Inter({
+const hanken = Hanken_Grotesk({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-hanken',
+  display: 'swap',
+})
+const splineMono = Spline_Sans_Mono({
   subsets: ['latin'],
   weight: ['400', '500'],
-  variable: '--font-inter',
+  variable: '--font-spline-mono',
   display: 'swap',
 })
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'
 const description =
-  'Curated AI prompts for marketing, brand, and product leaders.'
+  'AI prompts for marketing, brand, and product leaders. Free, no login.'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -52,7 +59,10 @@ export default async function RootLayout({
   const isAuthed = await getIsAuthed()
 
   return (
-    <html lang="en" className={`${fraunces.variable} ${inter.variable}`}>
+    <html
+      lang="en"
+      className={`${newsreader.variable} ${hanken.variable} ${splineMono.variable}`}
+    >
       <body>
         <PostHogProvider>
           <ToastProvider>

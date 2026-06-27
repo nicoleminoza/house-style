@@ -45,8 +45,9 @@ export function Footer() {
         </div>
 
         <p className="mt-8 border-t border-line pt-6 text-xs text-muted">
-          Typeset in <span className="font-serif text-muted">Fraunces</span> and{' '}
-          <span className="font-sans text-muted">Inter</span>.
+          Typeset in <span className="font-serif italic">Newsreader</span>,{' '}
+          <span className="font-sans">Hanken Grotesk</span>, and{' '}
+          <span className="font-mono">Spline Sans Mono</span>.
         </p>
       </div>
     </footer>
