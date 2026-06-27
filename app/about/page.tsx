@@ -35,16 +35,8 @@ export default function AboutPage() {
         <p className="font-serif text-ink">Nicole Miñoza</p>
       </div>
 
-      <div className="mt-8 flex items-center gap-4 text-sm">
-        <a
-          href="https://nicoleminoza.com"
-          target="_blank"
-          rel="noreferrer"
-          className="text-accent hover:underline"
-        >
-          nicoleminoza.com
-        </a>
-        <Link href="/method" className="text-muted hover:text-accent">
+      <div className="mt-8 text-sm">
+        <Link href="/method" className="text-accent hover:underline">
           Read the method
         </Link>
       </div>
