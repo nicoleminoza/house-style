@@ -9,20 +9,13 @@ export function Logo({ className = '' }: { className?: string }) {
       aria-label="House Style"
     >
       <rect width="64" height="64" rx="12" fill="#6b2c41" />
-      {/* Baseline placed by cap-height so the H is optically centered in all
-          renderers (avoids dominant-baseline, which centers the em box and
-          drops the cap low). y = (64 + capHeight≈30.5) / 2 ≈ 47.25 */}
-      <text
-        x="32"
-        y="47.25"
+      {/* The H is an outlined Georgia Bold path (not live text), so the mark
+          renders pixel-identically everywhere — app, SVG, PNG, any browser —
+          with no dependency on the Georgia font being installed. */}
+      <path
+        d="M50.605 45.574L50.605 47.250L34.127 47.250L34.127 45.574Q34.664 45.531 35.695 45.445Q36.727 45.359 37.113 45.188Q37.908 44.865 38.209 44.339Q38.510 43.813 38.510 42.996L38.510 32.490L25.490 32.490L25.490 42.760Q25.490 43.490 25.802 44.070Q26.113 44.650 26.865 44.973Q27.273 45.145 28.262 45.338Q29.250 45.531 29.873 45.574L29.873 47.250L13.395 47.250L13.395 45.574Q13.932 45.553 14.974 45.435Q16.016 45.316 16.488 45.145Q17.262 44.865 17.563 44.296Q17.863 43.727 17.863 42.953L17.863 21.383Q17.863 20.631 17.595 20.115Q17.326 19.600 16.488 19.213Q15.865 18.934 14.855 18.708Q13.846 18.482 13.395 18.439L13.395 16.764L29.873 16.764L29.873 18.439Q29.207 18.482 28.283 18.654Q27.359 18.826 26.865 18.977Q26.027 19.256 25.759 19.868Q25.490 20.480 25.490 21.168L25.490 30.277L38.510 30.277L38.510 21.383Q38.510 20.631 38.230 20.115Q37.951 19.600 37.113 19.213Q36.555 18.955 35.620 18.729Q34.686 18.504 34.127 18.439L34.127 16.764L50.605 16.764L50.605 18.439Q49.918 18.482 49.059 18.622Q48.199 18.762 47.512 18.977Q46.695 19.256 46.416 19.857Q46.137 20.459 46.137 21.168L46.137 42.760Q46.137 43.533 46.416 44.070Q46.695 44.607 47.512 44.973Q48.027 45.188 49.005 45.359Q49.982 45.531 50.605 45.574"
         fill="#faf6f1"
-        fontFamily="Georgia, 'Times New Roman', serif"
-        fontWeight="600"
-        fontSize="44"
-        textAnchor="middle"
-      >
-        H
-      </text>
+      />
     </svg>
   )
 }
