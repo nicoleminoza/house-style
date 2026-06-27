@@ -29,7 +29,7 @@ export default function AboutPage() {
         </p>
         <p>
           It also shows how I approach product: scope tightly, make the first try
-          a win, and treat curation as the product. Built in React. The prompts
+          a win, and treat curation as the product. Built with Next.js. The prompts
           live in a typed data file, and curation happens in code review.
         </p>
         <p className="font-serif text-ink">Nicole Miñoza</p>
