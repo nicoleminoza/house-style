@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { Sandbox, type SandboxPrompt } from '@/components/Sandbox'
 import { getCatalogForClient, getIsAuthed } from '@/lib/prompts'
 
-export const metadata = { title: 'Sandbox — House Style' }
+export const metadata = { title: 'Sandbox, House Style' }
 
 // Interactive "fill the variables" sandbox. Only prompts whose payload is
 // unlocked (all public prompts, plus premium when authed) can be filled here.

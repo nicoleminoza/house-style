@@ -1,4 +1,4 @@
-// SERVER-ONLY data layer. Never import this from a Client Component — payloads
+// SERVER-ONLY data layer. Never import this from a Client Component, payloads
 // must only be resolved on the server, gated by tier + auth.
 import { hasSupabase } from './env'
 import { seedRows, seedMeta } from './seed'
@@ -42,7 +42,7 @@ export async function getCatalogMeta(): Promise<PromptMeta[]> {
 /**
  * The catalog as delivered to the client. Public payloads are inlined (instantly
  * copyable, zero friction). Premium payloads are included ONLY when the user is
- * authed; otherwise `payload` is null and `locked` is true — the secret string
+ * authed; otherwise `payload` is null and `locked` is true, the secret string
  * never leaves the server for a locked prompt.
  */
 export async function getCatalogForClient(): Promise<PromptForClient[]> {
@@ -84,7 +84,7 @@ export async function getCatalogForClient(): Promise<PromptForClient[]> {
 
 /**
  * Fetch a single premium payload on demand (e.g. right after sign-in). Returns
- * null if the prompt is premium and the user isn't authed — the gate holds even
+ * null if the prompt is premium and the user isn't authed, the gate holds even
  * if the slug is guessed.
  */
 export async function getPayload(slug: string): Promise<string | null> {

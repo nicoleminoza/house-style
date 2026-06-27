@@ -3,7 +3,7 @@ import { hasSupabaseAdmin } from '@/lib/env'
 import { getIsAuthed } from '@/lib/prompts'
 import { createAdminClient } from '@/lib/supabase/admin'
 
-export const metadata = { title: 'Dashboard — House Style' }
+export const metadata = { title: 'Dashboard, House Style' }
 export const dynamic = 'force-dynamic'
 
 interface Metrics {
@@ -63,7 +63,7 @@ export default async function DashboardPage() {
         Dashboard
       </h1>
       <p className="mt-4 text-sm text-muted">
-        Live usage — copy events, Tier-2 gate conversion, and the hero framework.
+        Live usage, copy events, Tier-2 gate conversion, and the hero framework.
       </p>
 
       {!hasSupabaseAdmin && (
@@ -73,10 +73,10 @@ export default async function DashboardPage() {
       )}
 
       <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
-        <Metric label="Prompt copies" value={metrics ? String(metrics.copies) : '—'} />
+        <Metric label="Prompt copies" value={metrics ? String(metrics.copies) : '0'} />
         <Metric
           label="Tier-2 conversion"
-          value={metrics?.conversionPct != null ? `${metrics.conversionPct}%` : '—'}
+          value={metrics?.conversionPct != null ? `${metrics.conversionPct}%` : '0%'}
           sub={
             metrics
               ? `${metrics.gatesConverted} / ${metrics.gatesTriggered} gates`
@@ -85,7 +85,7 @@ export default async function DashboardPage() {
         />
         <Metric
           label="Top framework (copy share)"
-          value={metrics?.topPrompt ? `${metrics.topPrompt.share}%` : '—'}
+          value={metrics?.topPrompt ? `${metrics.topPrompt.share}%` : '0%'}
           sub={metrics?.topPrompt?.slug}
         />
       </div>

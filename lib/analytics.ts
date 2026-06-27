@@ -1,15 +1,16 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // Central analytics wrapper. THE single place to swap telemetry backends.
 //
-// Import only from Client Components — it uses posthog-js. Every event is fully
+// Import only from Client Components, it uses posthog-js. Every event is fully
 // typed, and the payloads are non-blocking (fire-and-forget): a slow or failing
 // sink can never delay or break a user action.
 //
 // PRIVACY GUARDRAIL: events only ever carry ids, booleans, and enums. We never
 // pass variable VALUES or pasted text. `Variable_Customized` carries the
-// variable KEY only — that a field changed, not what was typed.
+// variable KEY only, that a field changed, not what was typed.
 // ─────────────────────────────────────────────────────────────────────────────
 import posthog from 'posthog-js'
+import { track as vercelTrack } from '@vercel/analytics'
 import { hasPostHog } from './env'
 import { logEvent } from '@/app/actions'
 
@@ -59,6 +60,17 @@ function dispatch(name: EventName, props: Record<string, unknown>): void {
   }
   // Sink 2: Supabase events table (via server action). Fire-and-forget.
   void logEvent(name, props)
+  // Sink 3: Vercel Web Analytics (cookieless). A lightweight copy event.
+  if (name === 'Prompt_Copied') {
+    try {
+      vercelTrack('copy', {
+        prompt_id: String(props.prompt_id ?? ''),
+        is_premium: Boolean(props.is_premium),
+      })
+    } catch {
+      /* never throw from telemetry */
+    }
+  }
 }
 
 /** Type-safe, non-blocking event tracking. */
@@ -76,7 +88,7 @@ export function rememberGate(promptId: string): void {
   try {
     sessionStorage.setItem(GATE_KEY, promptId)
   } catch {
-    /* storage blocked — conversion just won't be attributed */
+    /* storage blocked, conversion just won't be attributed */
   }
 }
 

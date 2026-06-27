@@ -26,7 +26,7 @@ export const prompts: Prompt[] = [
     category: 'PMM/GTM',
     tags: ['positioning', 'competitive', 'messaging'],
     description: 'Pressure-test a positioning statement against alternatives and the real competitive set.',
-    prompt: `Role: Act as a ruthless product marketing leader who has positioned category winners and has zero tolerance for differentiation any rival could claim verbatim. Here is our current positioning: [POSITIONING STATEMENT]. Category: [CATEGORY]. Primary competitors: [COMPETITORS]. ICP: [ICP]. Critique it — do not soften findings: (1) Is the category frame the most advantageous one available, or are we fighting on the incumbent's terms? (2) Is the differentiation defensible, or a feature claim anyone could make? Flag every line a competitor could say verbatim. (3) What unstated alternative is the buyer actually comparing us to? Then deliver two sharper positioning alternatives, each with the tradeoff named, and a one-line test for whether the new frame is ownable. Calibration — weak: "the leading platform for teams." → ownable: "[the specific job no rival can claim]."`,
+    prompt: `Role: Act as a ruthless product marketing leader who has positioned category winners and has zero tolerance for differentiation any rival could claim verbatim. Here is our current positioning: [POSITIONING STATEMENT]. Category: [CATEGORY]. Primary competitors: [COMPETITORS]. ICP: [ICP]. Critique it, do not soften findings: (1) Is the category frame the most advantageous one available, or are we fighting on the incumbent's terms? (2) Is the differentiation defensible, or a feature claim anyone could make? Flag every line a competitor could say verbatim. (3) What unstated alternative is the buyer actually comparing us to? Then deliver two sharper positioning alternatives, each with the tradeoff named, and a one-line test for whether the new frame is ownable. Calibration: weak: "the leading platform for teams." → ownable: "[the specific job no rival can claim]."`,
   },
   {
     id: 'pmm-launch-narrative',
@@ -34,7 +34,7 @@ export const prompts: Prompt[] = [
     category: 'PMM/GTM',
     tags: ['launch', 'narrative', 'messaging'],
     description: 'Turn a feature list into a "why now" story leadership and press will repeat.',
-    prompt: `Role: Act as a category-narrative strategist who builds "why now" stories leadership and press repeat — plainspoken, no launch-speak. We're launching [PRODUCT/FEATURE] for [AUDIENCE]. Capabilities: [LIST]. The market shift that makes this matter now: [SHIFT]. Write the narrative in this order: (1) the one-line "why now," (2) the problem with the old way, (3) the stakes of not changing, (4) our point of view as the resolution. Then give the 3-sentence version, the paragraph version, and 5 message pillars — each pillar carries one proof point (a metric, a feature, or named customer evidence). Cut any pillar that rests on a claim a competitor could make verbatim, and rewrite it to be ownable. No adjective survives without a claim behind it.`,
+    prompt: `Role: Act as a category-narrative strategist who builds "why now" stories leadership and press repeat, plainspoken, no launch-speak. We're launching [PRODUCT/FEATURE] for [AUDIENCE]. Capabilities: [LIST]. The market shift that makes this matter now: [SHIFT]. Write the narrative in this order: (1) the one-line "why now," (2) the problem with the old way, (3) the stakes of not changing, (4) our point of view as the resolution. Then give the 3-sentence version, the paragraph version, and 5 message pillars, each pillar carries one proof point (a metric, a feature, or named customer evidence). Cut any pillar that rests on a claim a competitor could make verbatim, and rewrite it to be ownable. No adjective survives without a claim behind it.`,
   },
   {
     id: 'pmm-messaging-house',
@@ -50,7 +50,7 @@ export const prompts: Prompt[] = [
     category: 'PMM/GTM',
     tags: ['competitive', 'sales', 'enablement'],
     description: 'Arm sales to win against a specific competitor without trashing them.',
-    prompt: `Role: Act as a competitive intelligence lead arming sales to win against [COMPETITOR] without trashing them — every claim defensible in a bake-off. Context: our strengths [STRENGTHS], known weaknesses [WEAKNESSES], their reputation [THEIR REP]. Deliver: a one-line "how we win"; 3 traps to set early in the deal; 3 landmines they'll plant about us, each with the rebuttal; and the single scenario where we should walk away. No disparagement that backfires under scrutiny — if a claim can't be substantiated, cut it.`,
+    prompt: `Role: Act as a competitive intelligence lead arming sales to win against [COMPETITOR] without trashing them, every claim defensible in a bake-off. Context: our strengths [STRENGTHS], known weaknesses [WEAKNESSES], their reputation [THEIR REP]. Deliver: a one-line "how we win"; 3 traps to set early in the deal; 3 landmines they'll plant about us, each with the rebuttal; and the single scenario where we should walk away. No disparagement that backfires under scrutiny, if a claim can't be substantiated, cut it.`,
   },
   {
     id: 'pmm-icp-definition',
@@ -74,7 +74,7 @@ export const prompts: Prompt[] = [
     category: 'PMM/GTM',
     tags: ['pricing', 'packaging', 'strategy'],
     description: 'Explain a pricing change so customers feel value, not extraction.',
-    prompt: `Role: Act as a PMM leading a pricing change for [PRODUCT] who frames value, never extraction. Current model: [CURRENT]. New model: [NEW]. Business reason: [REASON]. Write the customer-facing narrative: what's changing, why it's fair, what each segment gains, and how to handle the customers who pay more. Then list the 5 toughest objections, each with a crisp response. Flag any line that reads as value extraction and rewrite it around the customer outcome. Calibration — extraction: "we're updating our pricing to better reflect value." → outcome: "[what the customer can now do that they couldn't before]."`,
+    prompt: `Role: Act as a PMM leading a pricing change for [PRODUCT] who frames value, never extraction. Current model: [CURRENT]. New model: [NEW]. Business reason: [REASON]. Write the customer-facing narrative: what's changing, why it's fair, what each segment gains, and how to handle the customers who pay more. Then list the 5 toughest objections, each with a crisp response. Flag any line that reads as value extraction and rewrite it around the customer outcome. Calibration: extraction: "we're updating our pricing to better reflect value." → outcome: "[what the customer can now do that they couldn't before]."`,
   },
   {
     id: 'pmm-analyst-briefing',
@@ -82,7 +82,7 @@ export const prompts: Prompt[] = [
     category: 'PMM/GTM',
     tags: ['analyst-relations', 'narrative', 'enablement'],
     description: 'Prep a tight, evidence-backed story for an analyst (Gartner/Forrester) briefing.',
-    prompt: `Role: Act as an analyst relations lead prepping a briefing with [ANALYST/FIRM] covering [MARKET] — every point substantiable, no spin. Our news/positioning: [NEWS]. Our differentiation: [DIFF]. Build the flow: the 3 things we want the analyst to remember, the proof for each; the 2 weaknesses they'll probe and our honest answers; and 3 market-trend questions to ask them. Flag anything that reads as spin and replace it with evidence — if we can't substantiate it, it doesn't go in the room.`,
+    prompt: `Role: Act as an analyst relations lead prepping a briefing with [ANALYST/FIRM] covering [MARKET], every point substantiable, no spin. Our news/positioning: [NEWS]. Our differentiation: [DIFF]. Build the flow: the 3 things we want the analyst to remember, the proof for each; the 2 weaknesses they'll probe and our honest answers; and 3 market-trend questions to ask them. Flag anything that reads as spin and replace it with evidence, if we can't substantiate it, it doesn't go in the room.`,
   },
   {
     id: 'pmm-customer-story',
@@ -114,7 +114,7 @@ export const prompts: Prompt[] = [
     category: 'PMM/GTM',
     tags: ['copy', 'conversion', 'content'],
     description: 'High-converting page copy structured around one action.',
-    prompt: `Role: Act as a conversion copywriter for [PRODUCT] — page goal [GOAL], audience [AUDIENCE] — who eradicates weak verbs and vague superlatives. Write: a hero headline + subhead that names the outcome (3 options); 3 benefit sections, each with a sub-head and 2 lines of proof; a social-proof block; an objection-handling FAQ of 4 questions; and one primary CTA, repeated consistently. Every line makes a claim or earns the next. Calibration — vague: "powerful tools to help you grow." → claim: "[the specific outcome, with the proof]."`,
+    prompt: `Role: Act as a conversion copywriter for [PRODUCT], page goal [GOAL], audience [AUDIENCE], who eradicates weak verbs and vague superlatives. Write: a hero headline + subhead that names the outcome (3 options); 3 benefit sections, each with a sub-head and 2 lines of proof; a social-proof block; an objection-handling FAQ of 4 questions; and one primary CTA, repeated consistently. Every line makes a claim or earns the next. Calibration: vague: "powerful tools to help you grow." → claim: "[the specific outcome, with the proof]."`,
   },
   {
     id: 'pmm-gtm-readiness',
@@ -142,7 +142,7 @@ export const prompts: Prompt[] = [
     category: 'Executive',
     tags: ['board', 'comms', 'strategy'],
     description: 'Compress a messy update into a board-ready narrative with the ask up front.',
-    prompt: `Role: Act as a chief of staff who writes board updates a busy board actually reads — plainspoken, the metric does the boasting, no hedging. Turn these raw notes into a board update: [NOTES]. Output, in this order: (1) headline takeaway — one sentence, the decision or ask first; (2) 3 things going well, each with the number that proves it; (3) 2 risks, each with its mitigation and owner; (4) one explicit ask of the board. Rules: cut every hedge and filler phrase ("we believe," "continue to," "strong progress"). Every claim carries a number or a name. Under 250 words. No launch-speak.`,
+    prompt: `Role: Act as a chief of staff who writes board updates a busy board actually reads, plainspoken, the metric does the boasting, no hedging. Turn these raw notes into a board update: [NOTES]. Output, in this order: (1) headline takeaway, one sentence, the decision or ask first; (2) 3 things going well, each with the number that proves it; (3) 2 risks, each with its mitigation and owner; (4) one explicit ask of the board. Rules: cut every hedge and filler phrase ("we believe," "continue to," "strong progress"). Every claim carries a number or a name. Under 250 words. No launch-speak.`,
   },
   {
     id: 'exec-decision-memo',
@@ -150,7 +150,7 @@ export const prompts: Prompt[] = [
     category: 'Executive',
     tags: ['decision', 'strategy', 'comms'],
     description: 'Frame a hard call so a team can actually decide, not just discuss.',
-    prompt: `Role: Act as a seasoned operator who helps a team decide, not just discuss, and is willing to disagree with the obvious choice. We're deciding whether to [DECISION]. Context: [CONTEXT]. Write the decision memo in this order: (1) the decision stated as a question; (2) whether it's reversible (two-way door) or not; (3) 2–3 viable options, each with the strongest case for it; (4) the single uncertainty that would change the answer; (5) a recommendation with a confidence level. Do not hedge to keep everyone comfortable — make the call and name what would have to be true for you to be wrong.`,
+    prompt: `Role: Act as a seasoned operator who helps a team decide, not just discuss, and is willing to disagree with the obvious choice. We're deciding whether to [DECISION]. Context: [CONTEXT]. Write the decision memo in this order: (1) the decision stated as a question; (2) whether it's reversible (two-way door) or not; (3) 2 to 3 viable options, each with the strongest case for it; (4) the single uncertainty that would change the answer; (5) a recommendation with a confidence level. Do not hedge to keep everyone comfortable, make the call and name what would have to be true for you to be wrong.`,
   },
   {
     id: 'exec-strategy-onepager',
@@ -158,7 +158,7 @@ export const prompts: Prompt[] = [
     category: 'Executive',
     tags: ['strategy', 'planning', 'comms'],
     description: 'Force a sprawling strategy into one page anyone can act on.',
-    prompt: `Role: Act as a strategy lead who forces a sprawling strategy onto one page and refuses to let "do everything" pass as a plan. Here's our thinking for [TEAM/PRODUCT] over [TIMEFRAME]: [BRAINDUMP]. Distill it to: the single most important goal; the 3 bets we're making; what we're explicitly NOT doing; the 2 assumptions that must hold true; and how we'll know it's working in 90 days. If the strategy is really "do everything," say so plainly and force the prioritization — name what gets cut.`,
+    prompt: `Role: Act as a strategy lead who forces a sprawling strategy onto one page and refuses to let "do everything" pass as a plan. Here's our thinking for [TEAM/PRODUCT] over [TIMEFRAME]: [BRAINDUMP]. Distill it to: the single most important goal; the 3 bets we're making; what we're explicitly NOT doing; the 2 assumptions that must hold true; and how we'll know it's working in 90 days. If the strategy is really "do everything," say so plainly and force the prioritization, name what gets cut.`,
   },
   {
     id: 'exec-okrs',
@@ -166,7 +166,7 @@ export const prompts: Prompt[] = [
     category: 'Executive',
     tags: ['okrs', 'planning', 'metrics'],
     description: 'Draft outcome-based OKRs and catch the vanity metrics.',
-    prompt: `Role: Act as an operating leader who writes outcome-based OKRs and catches the vanity metrics — including your own. Our priority next [QUARTER/YEAR] is [PRIORITY]. Draft 1 objective and 3 key results. Then critique your own draft against three tests: are the KRs outcomes or activities; are they measurable; would hitting them actually mean we won? Rewrite any KR that's a vanity metric or a task in disguise, and flag if the objective is too broad to be a single objective. Every KR carries a number.`,
+    prompt: `Role: Act as an operating leader who writes outcome-based OKRs and catches the vanity metrics, including your own. Our priority next [QUARTER/YEAR] is [PRIORITY]. Draft 1 objective and 3 key results. Then critique your own draft against three tests: are the KRs outcomes or activities; are they measurable; would hitting them actually mean we won? Rewrite any KR that's a vanity metric or a task in disguise, and flag if the objective is too broad to be a single objective. Every KR carries a number.`,
   },
   {
     id: 'exec-allhands',
@@ -182,7 +182,7 @@ export const prompts: Prompt[] = [
     category: 'Executive',
     tags: ['influence', 'cross-functional', 'strategy'],
     description: 'Map who can make or break an initiative and how to bring them along.',
-    prompt: `Role: Act as a chief of staff who maps who can make or break an initiative and how to bring them along. I'm driving [INITIATIVE] across [ORG]. Key players: [PEOPLE/ROLES]. For each, infer: their likely position (champion / skeptic / blocker / unaware), what they care about, what they fear, and the specific ask or framing that moves them. Then sequence the campaign: who I need on board first, who I brief vs. consult vs. inform, and the one relationship most likely to sink this if I ignore it. Be specific about the move for each person — no generic "align with stakeholders."`,
+    prompt: `Role: Act as a chief of staff who maps who can make or break an initiative and how to bring them along. I'm driving [INITIATIVE] across [ORG]. Key players: [PEOPLE/ROLES]. For each, infer: their likely position (champion / skeptic / blocker / unaware), what they care about, what they fear, and the specific ask or framing that moves them. Then sequence the campaign: who I need on board first, who I brief vs. consult vs. inform, and the one relationship most likely to sink this if I ignore it. Be specific about the move for each person, no generic "align with stakeholders."`,
   },
   {
     id: 'exec-difficult-feedback',
@@ -190,7 +190,7 @@ export const prompts: Prompt[] = [
     category: 'Executive',
     tags: ['leadership', 'management', 'comms'],
     description: 'Prepare to deliver hard feedback that lands and preserves the relationship.',
-    prompt: `Role: Act as a leadership coach who makes hard feedback land without wrecking the relationship — direct, never conflict-avoidant. I need to give [PERSON/ROLE] feedback about [ISSUE]. Impact so far: [IMPACT]. Help me prepare: open with the specific behavior and its effect (not character), separate observation from story, state what good looks like, and leave room for their perspective. Draft how I'd open the conversation in 3 sentences I could actually say out loud. Then flag every place I'm being vague or conflict-avoidant and rewrite it to be direct but kind. Show, don't tell — anchor on the specific moment, not adjectives about them.`,
+    prompt: `Role: Act as a leadership coach who makes hard feedback land without wrecking the relationship, direct, never conflict-avoidant. I need to give [PERSON/ROLE] feedback about [ISSUE]. Impact so far: [IMPACT]. Help me prepare: open with the specific behavior and its effect (not character), separate observation from story, state what good looks like, and leave room for their perspective. Draft how I'd open the conversation in 3 sentences I could actually say out loud. Then flag every place I'm being vague or conflict-avoidant and rewrite it to be direct but kind. Show, don't tell, anchor on the specific moment, not adjectives about them.`,
   },
   {
     id: 'exec-hiring-scorecard',
@@ -198,7 +198,7 @@ export const prompts: Prompt[] = [
     category: 'Executive',
     tags: ['hiring', 'team', 'operations'],
     description: 'Define what "great" means for a role before you interview anyone.',
-    prompt: `Role: Act as a hiring manager who defines what "great" means before interviewing anyone. Filling [ROLE] reporting to [WHOM]. The mission of this role in one sentence: [MISSION]. Build the scorecard: 4–5 outcomes this person must deliver in year one, the core competencies that predict success, and 2 deal-breakers. Then design the interview loop: who interviews for what, the 3 questions that actually discriminate strong from weak candidates, and the signal each one tests. Cut every generic question everyone passes — if a strong and a weak candidate would answer it the same way, it's out.`,
+    prompt: `Role: Act as a hiring manager who defines what "great" means before interviewing anyone. Filling [ROLE] reporting to [WHOM]. The mission of this role in one sentence: [MISSION]. Build the scorecard: 4 to 5 outcomes this person must deliver in year one, the core competencies that predict success, and 2 deal-breakers. Then design the interview loop: who interviews for what, the 3 questions that actually discriminate strong from weak candidates, and the signal each one tests. Cut every generic question everyone passes, if a strong and a weak candidate would answer it the same way, it's out.`,
   },
   {
     id: 'exec-prioritization',
@@ -214,7 +214,7 @@ export const prompts: Prompt[] = [
     category: 'Executive',
     tags: ['risk', 'planning', 'decision'],
     description: 'Imagine the failure before it happens and de-risk the plan.',
-    prompt: `Role: Act as a risk-minded advisor who imagines the failure before it happens and de-risks the plan. We're about to [PLAN/INITIATIVE], expecting [INTENDED OUTCOME]. Run a pre-mortem: it's [TIMEFRAME] later and this failed badly. Generate the 6 most likely reasons it failed, ranked by probability × damage. For the top 3, give an early-warning signal we could watch for and one concrete step now that reduces the risk. Be specific to this plan — no generic project risks like "scope creep" or "misalignment."`,
+    prompt: `Role: Act as a risk-minded advisor who imagines the failure before it happens and de-risks the plan. We're about to [PLAN/INITIATIVE], expecting [INTENDED OUTCOME]. Run a pre-mortem: it's [TIMEFRAME] later and this failed badly. Generate the 6 most likely reasons it failed, ranked by probability × damage. For the top 3, give an early-warning signal we could watch for and one concrete step now that reduces the risk. Be specific to this plan, no generic project risks like "scope creep" or "misalignment."`,
   },
   {
     id: 'exec-exec-summary',
@@ -222,7 +222,7 @@ export const prompts: Prompt[] = [
     category: 'Executive',
     tags: ['comms', 'synthesis', 'writing'],
     description: 'Distill a long document into a summary a busy exec will actually read.',
-    prompt: `Role: Act as a chief of staff who distills a long document into something a time-pressed executive will actually read — conclusion first. Summarize this for them: [DOCUMENT]. Output, in this order: a 3-sentence "what you need to know"; the single decision or action required; 3 supporting points, each with its key number; and what happens if we do nothing. If the document buries the real issue, surface it and say exactly where it was hidden. No preamble — lead with the conclusion.`,
+    prompt: `Role: Act as a chief of staff who distills a long document into something a time-pressed executive will actually read, conclusion first. Summarize this for them: [DOCUMENT]. Output, in this order: a 3-sentence "what you need to know"; the single decision or action required; 3 supporting points, each with its key number; and what happens if we do nothing. If the document buries the real issue, surface it and say exactly where it was hidden. No preamble, lead with the conclusion.`,
   },
   {
     id: 'exec-1on1-skip',
@@ -238,7 +238,7 @@ export const prompts: Prompt[] = [
     category: 'Executive',
     tags: ['change', 'comms', 'leadership'],
     description: 'Communicate an org change so people understand and stay engaged.',
-    prompt: `Role: Act as an executive communicator who rolls out change so people understand it and stay engaged. We're rolling out [CHANGE] affecting [WHO], because [REASON]. Likely reactions: [CONCERNS]. Draft the plan: the core message in one sentence; what to say first vs. later; which audiences need a tailored version; the channel and sequence; and how leaders should answer "what does this mean for me?" Name the thing people are most afraid of and address it head-on — do not bury it under the business rationale.`,
+    prompt: `Role: Act as an executive communicator who rolls out change so people understand it and stay engaged. We're rolling out [CHANGE] affecting [WHO], because [REASON]. Likely reactions: [CONCERNS]. Draft the plan: the core message in one sentence; what to say first vs. later; which audiences need a tailored version; the channel and sequence; and how leaders should answer "what does this mean for me?" Name the thing people are most afraid of and address it head-on, do not bury it under the business rationale.`,
   },
   {
     id: 'exec-meeting-design',
@@ -258,7 +258,7 @@ export const prompts: Prompt[] = [
     category: 'AI & Creative Tools',
     tags: ['ai', 'gtm', 'positioning'],
     description: 'Translate an AI capability into buyer value without the hype.',
-    prompt: `Role: Act as a PMM for an AI creative tool who translates an AI capability into buyer value with zero hype. Our team shipped [AI CAPABILITY]. Most competitors also claim "AI-powered [X]." Write the brief: name the specific job the user now gets done faster or better; quantify the before/after where possible ([METRIC]); identify the one proof point that makes the claim credible; and rewrite the value prop so it would NOT survive being said by a competitor verbatim. Flag every claim that is hype rather than substantiated. Calibration — hype: "AI-powered creativity, reimagined." → substantiated: "[the specific task, the time saved, the proof]."`,
+    prompt: `Role: Act as a PMM for an AI creative tool who translates an AI capability into buyer value with zero hype. Our team shipped [AI CAPABILITY]. Most competitors also claim "AI-powered [X]." Write the brief: name the specific job the user now gets done faster or better; quantify the before/after where possible ([METRIC]); identify the one proof point that makes the claim credible; and rewrite the value prop so it would NOT survive being said by a competitor verbatim. Flag every claim that is hype rather than substantiated. Calibration: hype: "AI-powered creativity, reimagined." → substantiated: "[the specific task, the time saved, the proof]."`,
   },
   {
     id: 'ai-creative-workflow-map',
@@ -266,7 +266,7 @@ export const prompts: Prompt[] = [
     category: 'AI & Creative Tools',
     tags: ['ai', 'product', 'research'],
     description: 'Find where AI removes real friction in a creative workflow.',
-    prompt: `Role: Act as a product strategist for creative software who finds where AI removes real friction — and where it shouldn't touch the craft. Map the end-to-end workflow for [CREATIVE TASK, e.g., producing a campaign key visual]. For each step, rate the friction (low / med / high) and whether AI can remove it, assist it, or should stay out. Then call out: the 2 steps where AI creates the most value, and the 1 where automating it would damage the craft or the user's sense of authorship. Be specific to this workflow — name the step, not "the creative process."`,
+    prompt: `Role: Act as a product strategist for creative software who finds where AI removes real friction, and where it shouldn't touch the craft. Map the end-to-end workflow for [CREATIVE TASK, e.g., producing a campaign key visual]. For each step, rate the friction (low / med / high) and whether AI can remove it, assist it, or should stay out. Then call out: the 2 steps where AI creates the most value, and the 1 where automating it would damage the craft or the user's sense of authorship. Be specific to this workflow, name the step, not "the creative process."`,
   },
   {
     id: 'ai-trust-messaging',
@@ -290,7 +290,7 @@ export const prompts: Prompt[] = [
     category: 'AI & Creative Tools',
     tags: ['ai', 'enablement', 'demo'],
     description: 'A demo flow that shows value fast and survives a live failure.',
-    prompt: `Role: Act as a PMM scripting a demo of [AI FEATURE] for [AUDIENCE] that shows value fast and survives a live failure. Their "wow" moment is [OUTCOME]. Write the 5-minute demo, in sequence: the setup line that frames the problem; the exact sequence of actions; the moment to pause for impact; and the value narration over each step. Include a fallback for when the model gives an imperfect result live (it will) that strengthens trust rather than undermining it. End with the one-sentence takeaway. Every line is something I could say out loud — no slide-speak.`,
+    prompt: `Role: Act as a PMM scripting a demo of [AI FEATURE] for [AUDIENCE] that shows value fast and survives a live failure. Their "wow" moment is [OUTCOME]. Write the 5-minute demo, in sequence: the setup line that frames the problem; the exact sequence of actions; the moment to pause for impact; and the value narration over each step. Include a fallback for when the model gives an imperfect result live (it will) that strengthens trust rather than undermining it. End with the one-sentence takeaway. Every line is something I could say out loud, no slide-speak.`,
   },
   {
     id: 'ai-eval-rubric',
@@ -298,7 +298,7 @@ export const prompts: Prompt[] = [
     category: 'AI & Creative Tools',
     tags: ['ai', 'product', 'quality'],
     description: 'Define "good enough to ship" for an AI feature before launch.',
-    prompt: `Role: Act as a product leader shipping [AI FEATURE] who defines "good enough to ship" before launch, not by vibe check. Build the evaluation rubric: the 4–5 dimensions that matter for this use case (e.g., accuracy, tone, usefulness, safety); what a 1 vs. 3 vs. 5 looks like on each, concretely; the failure modes that are unacceptable at any score; and the bar we must clear to launch. Then specify how to test it against real prompts so the score is earned, not asserted. Every dimension is measurable — no "feels good."`,
+    prompt: `Role: Act as a product leader shipping [AI FEATURE] who defines "good enough to ship" before launch, not by vibe check. Build the evaluation rubric: the 4 to 5 dimensions that matter for this use case (e.g., accuracy, tone, usefulness, safety); what a 1 vs. 3 vs. 5 looks like on each, concretely; the failure modes that are unacceptable at any score; and the bar we must clear to launch. Then specify how to test it against real prompts so the score is earned, not asserted. Every dimension is measurable, no "feels good."`,
   },
   {
     id: 'ai-prompt-feature-design',
@@ -306,7 +306,7 @@ export const prompts: Prompt[] = [
     category: 'AI & Creative Tools',
     tags: ['ai', 'product', 'ux'],
     description: 'Design the UX around an AI feature so users get good results.',
-    prompt: `Role: Act as a product designer for an AI feature in [PRODUCT] that does [FUNCTION], who makes good output the default. Users struggle because [PROBLEM, e.g., blank-prompt paralysis, vague results]. Design the interaction: how we guide input without making it feel like work; sensible defaults and starting points; how we show the AI's confidence or limits; and how users refine results. Then name the one place where adding friction actually improves the outcome. Be specific to this feature — no generic "improve the UX."`,
+    prompt: `Role: Act as a product designer for an AI feature in [PRODUCT] that does [FUNCTION], who makes good output the default. Users struggle because [PROBLEM, e.g., blank-prompt paralysis, vague results]. Design the interaction: how we guide input without making it feel like work; sensible defaults and starting points; how we show the AI's confidence or limits; and how users refine results. Then name the one place where adding friction actually improves the outcome. Be specific to this feature, no generic "improve the UX."`,
   },
   {
     id: 'ai-competitive-ai-claims',
@@ -322,7 +322,7 @@ export const prompts: Prompt[] = [
     category: 'AI & Creative Tools',
     tags: ['ai', 'strategy', 'roadmap'],
     description: 'Tell a coherent AI story across a multi-release roadmap.',
-    prompt: `Role: Act as a product leader for [PRODUCT] who tells one coherent AI story across a multi-release roadmap. Our roadmap over [TIMEFRAME]: [FEATURES/PHASES]. Right now it reads as a list of disconnected AI features. Craft the through-line: the single belief about how work changes that ties these together; what each phase unlocks for the user; and the destination we're building toward. Then flag any roadmap item that's AI-for-AI's-sake and doesn't serve the narrative — and say whether to cut it or reframe it.`,
+    prompt: `Role: Act as a product leader for [PRODUCT] who tells one coherent AI story across a multi-release roadmap. Our roadmap over [TIMEFRAME]: [FEATURES/PHASES]. Right now it reads as a list of disconnected AI features. Craft the through-line: the single belief about how work changes that ties these together; what each phase unlocks for the user; and the destination we're building toward. Then flag any roadmap item that's AI-for-AI's-sake and doesn't serve the narrative, and say whether to cut it or reframe it.`,
   },
   {
     id: 'ai-launch-faq',
@@ -330,7 +330,7 @@ export const prompts: Prompt[] = [
     category: 'AI & Creative Tools',
     tags: ['ai', 'launch', 'enablement'],
     description: 'Pre-answer the hard questions an AI launch will provoke.',
-    prompt: `Role: Act as a PMM launching [AI FEATURE] who pre-answers the hard questions honestly. Write the internal + external FAQ covering what this will actually raise: how it works, what data it uses, whether my content trains it, who owns the output, how accurate it is, what it costs, whether it replaces [JOB/FEATURE], and the known limitations. Answer each plainly — no dodging. Then mark which answers are external-safe and which need legal review before we publish. If an honest answer is "we don't know yet," say that, and what we're doing about it.`,
+    prompt: `Role: Act as a PMM launching [AI FEATURE] who pre-answers the hard questions honestly. Write the internal + external FAQ covering what this will actually raise: how it works, what data it uses, whether my content trains it, who owns the output, how accurate it is, what it costs, whether it replaces [JOB/FEATURE], and the known limitations. Answer each plainly, no dodging. Then mark which answers are external-safe and which need legal review before we publish. If an honest answer is "we don't know yet," say that, and what we're doing about it.`,
   },
   {
     id: 'ai-adoption-plan',
@@ -346,7 +346,7 @@ export const prompts: Prompt[] = [
     category: 'AI & Creative Tools',
     tags: ['ai', 'trust', 'strategy'],
     description: 'Articulate where your company stands on AI, credibly.',
-    prompt: `Role: Act as a comms strategist who gives [COMPANY] a credible public point of view on responsible AI for our [PRODUCT/CATEGORY] — specifics, not platitudes. Our actual practices: [PRACTICES]. Draft the POV: the principles we actually follow, the tradeoffs we openly acknowledge, what we commit to, and what we're still figuring out. Flag every line that sounds like ethics-washing and replace it with something concrete we can be held to. Test each commitment: could someone hold us to it, or is it a feeling? If it's a feeling, cut it.`,
+    prompt: `Role: Act as a comms strategist who gives [COMPANY] a credible public point of view on responsible AI for our [PRODUCT/CATEGORY], specifics, not platitudes. Our actual practices: [PRACTICES]. Draft the POV: the principles we actually follow, the tradeoffs we openly acknowledge, what we commit to, and what we're still figuring out. Flag every line that sounds like ethics-washing and replace it with something concrete we can be held to. Test each commitment: could someone hold us to it, or is it a feeling? If it's a feeling, cut it.`,
   },
   {
     id: 'ai-creative-prompt-pack',
@@ -358,7 +358,7 @@ export const prompts: Prompt[] = [
   },
 
   // ─────────────────────────────────────────────────────────────
-  // HERO FRAMEWORKS — the flagship, multi-stage prompts. Deliberately the most
+  // HERO FRAMEWORKS: the flagship, multi-stage prompts. Deliberately the most
   // thorough in the library; surfaced first and badged in the app.
   // ─────────────────────────────────────────────────────────────
   {
@@ -369,34 +369,34 @@ export const prompts: Prompt[] = [
     description:
       "Codify a leader's written house style, then apply it across every channel so the voice is unmistakable.",
     prompt: `ROLE
-You are an executive communications architect. You codify a leader's written "house style" — the documented rules for how they sound — and apply it across every channel so the voice is unmistakable and consistent.
+You are an executive communications architect. You codify a leader's written "house style", the documented rules for how they sound, and apply it across every channel so the voice is unmistakable and consistent.
 
 OBJECTIVE
 From the inputs below: (1) reverse-engineer the leader's voice into an explicit, reusable Voice Matrix, then (2) apply it to produce on-voice drafts for the named channels.
 
-INPUTS — use only what's provided; never invent facts, metrics, or titles.
+INPUTS: use only what's provided; never invent facts, metrics, or titles.
 • Leader: [NAME, ROLE, COMPANY]
 • Channels to cover: [e.g., board update, all-hands, investor email, customer apology]
-• Writing samples (paste 2–4): [SAMPLES]
+• Writing samples (paste 2 to 4): [SAMPLES]
 • Non-negotiables: [anything the leader always or never does]
 
-METHOD — work in stages; show each.
-Stage 1 — Voice Matrix (one page):
-  – Disposition: 3 adjectives, each with a one-line "looks like / not like"
-  – Lexicon: 10 words/phrases this leader uses; 10 they'd never use (banned)
-  – Mechanics: sentence length, rhythm, hedging tolerance, first vs. third person
-  – Evidence rule: how claims are backed — a number, a name, or cut
-  – Calibration: 4 rows of off-voice → on-voice, drawn from the samples
-Stage 2 — Channel application: for each channel, one on-voice draft that obeys the Matrix. Tag each with the single Matrix rule it leans on hardest.
-Stage 3 — Self-audit: re-read every draft against the Matrix; flag any line that breaks a rule and rewrite it.
+METHOD: work in stages; show each.
+Stage 1: Voice Matrix (one page):
+  - Disposition: 3 adjectives, each with a one-line "looks like / not like"
+  - Lexicon: 10 words/phrases this leader uses; 10 they'd never use (banned)
+  - Mechanics: sentence length, rhythm, hedging tolerance, first vs. third person
+  - Evidence rule: how claims are backed, a number, a name, or cut
+  - Calibration: 4 rows of off-voice → on-voice, drawn from the samples
+Stage 2: Channel application: for each channel, one on-voice draft that obeys the Matrix. Tag each with the single Matrix rule it leans on hardest.
+Stage 3: Self-audit: re-read every draft against the Matrix; flag any line that breaks a rule and rewrite it.
 
 GUARDRAILS
 • No AI-isms, no filler, no superlatives without proof. The metric does the boasting.
-• If a sample contradicts a stated non-negotiable, surface the conflict — don't paper over it.
+• If a sample contradicts a stated non-negotiable, surface the conflict, don't paper over it.
 • Never fabricate a quote, number, or event to make a draft land.
 
 ACCEPTANCE TEST
-A colleague who knows this leader should pick these drafts out of a lineup as "unmistakably them." If a draft could belong to any competent executive, it fails — rewrite until it couldn't.
+A colleague who knows this leader should pick these drafts out of a lineup as "unmistakably them." If a draft could belong to any competent executive, it fails, rewrite until it couldn't.
 
 OUTPUT ORDER
 Voice Matrix → Channel drafts (each tagged with its lead rule) → Self-audit → the single sharpest line you wrote, and why it's on-voice.`,
@@ -407,33 +407,33 @@ Voice Matrix → Channel drafts (each tagged with its lead rule) → Self-audit 
     category: 'PMM/GTM',
     tags: ['positioning', 'category', 'messaging', 'framework'],
     description:
-      'Build defensible, ownable positioning end to end — category frame to proof architecture — and pressure-test it until only the ownable survives.',
+      'Build defensible, ownable positioning end to end, category frame to proof architecture, and pressure-test it until only the ownable survives.',
     prompt: `ROLE
 You are a positioning architect who has built category-defining positioning for products that became the default in their space. You have zero tolerance for differentiation a competitor could claim verbatim.
 
 OBJECTIVE
-Build defensible, ownable positioning end to end — from category frame to proof architecture — and pressure-test it until only the ownable survives.
+Build defensible, ownable positioning end to end, from category frame to proof architecture, and pressure-test it until only the ownable survives.
 
-INPUTS — use only what's provided.
+INPUTS: use only what's provided.
 • Product & what it does: [PRODUCT]
 • ICP and the trigger that creates urgency: [ICP / TRIGGER]
 • Competitors (named) + the unstated alternative the buyer also weighs: [COMPETITORS / ALTERNATIVE]
 • Our real, evidenced advantages (a metric, feature, or named customer): [PROOF]
 
-METHOD — stages, shown.
-Stage 1 — Category frame: propose 2–3 frames we could compete in; for each, who wins on it today and whether it's advantageous or a trap. Recommend one.
-Stage 2 — Alternative map: every alternative the buyer weighs (including "do nothing" and a spreadsheet); our honest win/lose against each.
-Stage 3 — Differentiation ladder: separate table-stakes from ownable. Kill every claim a competitor could say verbatim.
-Stage 4 — Message house: one value proposition; 3 pillars; each pillar a claim + one proof point.
-Stage 5 — Proof architecture: for each claim, the strongest evidence — and the gap to close if it's thin.
+METHOD: stages, shown.
+Stage 1: Category frame: propose 2 to 3 frames we could compete in; for each, who wins on it today and whether it's advantageous or a trap. Recommend one.
+Stage 2: Alternative map: every alternative the buyer weighs (including "do nothing" and a spreadsheet); our honest win/lose against each.
+Stage 3: Differentiation ladder: separate table-stakes from ownable. Kill every claim a competitor could say verbatim.
+Stage 4: Message house: one value proposition; 3 pillars; each pillar a claim + one proof point.
+Stage 5: Proof architecture: for each claim, the strongest evidence, and the gap to close if it's thin.
 
 GUARDRAILS
 • Every claim carries a number, a name, or it's cut.
-• Flag any line written in the category incumbent's language — that means we're fighting on their terms.
-• Calibration — generic: "the leading platform for teams." → ownable: "[the specific job no rival can claim]."
+• Flag any line written in the category incumbent's language, that means we're fighting on their terms.
+• Calibration: generic: "the leading platform for teams." → ownable: "[the specific job no rival can claim]."
 
 ACCEPTANCE TEST
-Read the final positioning aloud as the competitor. If they could put it on their own site without lying, it isn't ownable yet — rewrite.
+Read the final positioning aloud as the competitor. If they could put it on their own site without lying, it isn't ownable yet, rewrite.
 
 OUTPUT ORDER
 Recommended category frame (+ rationale) → Alternative map → Differentiation ladder → Message house → Proof architecture → the 3 biggest evidence gaps to close, ranked.`,
@@ -444,33 +444,33 @@ Recommended category frame (+ rationale) → Alternative map → Differentiation
     category: 'AI & Creative Tools',
     tags: ['ai', 'launch', 'gtm', 'trust', 'framework'],
     description:
-      'The complete go-to-market kit for an AI feature — value brief, trust messaging, demo, FAQ, adoption — each held to a substantiation bar.',
+      'The complete go-to-market kit for an AI feature, value brief, trust messaging, demo, FAQ, adoption, each held to a substantiation bar.',
     prompt: `ROLE
 You are a product marketing leader who has shipped AI features to millions without the hype. You translate capability into substantiated buyer value and pre-empt the trust questions an AI launch always provokes.
 
 OBJECTIVE
-Produce the complete go-to-market kit for an AI feature: value brief, trust messaging, demo script, launch FAQ, and adoption plan — each held to a substantiation bar.
+Produce the complete go-to-market kit for an AI feature: value brief, trust messaging, demo script, launch FAQ, and adoption plan, each held to a substantiation bar.
 
-INPUTS — use only what's provided.
+INPUTS: use only what's provided.
 • Feature & what it does: [AI FEATURE]
 • The specific job it gets done faster/better, with before→after if known: [JOB / METRIC]
 • Audience & their top fear: [AUDIENCE / FEAR]
 • What we actually do with user data + who owns the output: [DATA / OWNERSHIP]
 
-METHOD — stages, shown.
-Stage 1 — Value brief: the specific job; the quantified before→after; the one proof point that makes it credible; a value prop rewritten so a competitor couldn't say it verbatim.
-Stage 2 — Trust messaging: plain-language answers on data, ownership, human control, and limits. Flag any line that's a guarantee we can't keep.
-Stage 3 — Demo script (5 min): setup → exact actions → pause-for-impact → narration → a fallback for an imperfect live result that strengthens trust rather than undermining it.
-Stage 4 — Launch FAQ: the hard questions (training data, accuracy, cost, "will it replace me?"). Mark each answer external-safe or needs-legal.
-Stage 5 — Adoption plan: the drop-off point from awareness to habit; the 2 highest-leverage moves; the metric each should move.
+METHOD: stages, shown.
+Stage 1: Value brief: the specific job; the quantified before→after; the one proof point that makes it credible; a value prop rewritten so a competitor couldn't say it verbatim.
+Stage 2: Trust messaging: plain-language answers on data, ownership, human control, and limits. Flag any line that's a guarantee we can't keep.
+Stage 3: Demo script (5 min): setup → exact actions → pause-for-impact → narration → a fallback for an imperfect live result that strengthens trust rather than undermining it.
+Stage 4: Launch FAQ: the hard questions (training data, accuracy, cost, "will it replace me?"). Mark each answer external-safe or needs-legal.
+Stage 5: Adoption plan: the drop-off point from awareness to habit; the 2 highest-leverage moves; the metric each should move.
 
 GUARDRAILS
-• Substantiation gate: every capability claim names its proof, or it's labeled "hype — cut."
+• Substantiation gate: every capability claim names its proof, or it's labeled "hype, cut."
 • Never imply the model does more than it does. Under-promise the edge cases.
-• Calibration — hype: "AI-powered creativity, reimagined." → substantiated: "[the task, the time saved, the proof]."
+• Calibration: hype: "AI-powered creativity, reimagined." → substantiated: "[the task, the time saved, the proof]."
 
 ACCEPTANCE TEST
-A skeptical engineer and a nervous customer both read the kit. If the engineer spots an overclaim or the customer still fears for their data, it fails — fix the specific line.
+A skeptical engineer and a nervous customer both read the kit. If the engineer spots an overclaim or the customer still fears for their data, it fails, fix the specific line.
 
 OUTPUT ORDER
 Value brief → Trust messaging → Demo script → Launch FAQ (each tagged) → Adoption plan → the one claim most likely to draw a "prove it," with the proof ready.`,

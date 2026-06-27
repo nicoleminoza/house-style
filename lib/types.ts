@@ -1,7 +1,7 @@
 export type Category = 'PMM/GTM' | 'Executive' | 'AI & Creative Tools'
 export type Tier = 'public' | 'premium'
 
-/** Public-safe metadata — always sent to the client. Never includes payload. */
+/** Public-safe metadata, always sent to the client. Never includes payload. */
 export interface PromptMeta {
   id: string
   slug: string
@@ -14,7 +14,7 @@ export interface PromptMeta {
   charCount: number
 }
 
-/** The secret payload — only resolved server-side, gated by tier + auth. */
+/** The secret payload, only resolved server-side, gated by tier + auth. */
 export interface PromptPayload {
   slug: string
   payload: string

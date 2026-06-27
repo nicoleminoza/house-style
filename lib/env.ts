@@ -6,7 +6,7 @@ export const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? ''
 
 export const hasSupabase = Boolean(supabaseUrl && supabaseAnonKey)
 
-// Service-role key — server-only, never sent to the client. Powers the
+// Service-role key, server-only, never sent to the client. Powers the
 // dashboard's event reads (bypasses RLS).
 export const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY ?? ''
 export const hasSupabaseAdmin = hasSupabase && Boolean(supabaseServiceKey)

@@ -1,51 +1,31 @@
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'The method — House Style',
+  title: 'The method, House Style',
   description:
-    'A house style is a rulebook for voice. The signature moves every prompt here is written to.',
+    'Curation is the product. The four-part bar every prompt here has to clear.',
 }
 
-const MOVES: { move: string; detail: string }[] = [
+const BAR: { part: string; detail: string }[] = [
   {
-    move: 'Cast a sharp persona — with an attitude.',
+    part: 'Role assignment',
     detail:
-      'Never "a recruiter." An elite recruiter who places senior leaders at arts nonprofits. Seniority + domain + niche, then the disposition: ruthless, frank, zero tolerance.',
+      'Every prompt casts a specific, credentialed expert with a point of view, not a generic assistant. The role sets the standard the answer has to meet.',
   },
   {
-    move: 'Legislate the language; don’t hope for it.',
+    part: '[BRACKET] variables',
     detail:
-      'Banned-word lists, "no AI-isms, no filler," "do not soften findings." The constraints are written down, not wished for.',
+      'Fill-in slots carry your product, audience, and real facts into the prompt, so it adapts to your situation instead of returning something generic.',
   },
   {
-    move: 'Every claim carries a number or a name.',
+    part: 'A structured deliverable',
     detail:
-      '"Use only these facts." "Do not invent." The metric does the boasting. Concrete over vague, always.',
+      'The output shape is dictated: numbered sections in an explicit order, so the answer arrives usable, not as a wall of text you have to mine.',
   },
   {
-    move: 'Lead with ownership; kill passive verbs.',
+    part: 'One instruction that pushes for a sharper answer',
     detail:
-      'Architected, launched, repositioned, drove — never managed, helped, supported. Show, don’t tell.',
-  },
-  {
-    move: 'Hand over a spec, not a request.',
-    detail:
-      'Numbered deliverables in an explicit order. The output shape is dictated, not left to chance.',
-  },
-  {
-    move: 'Make it score or flag — never just react.',
-    detail:
-      'Rubrics, lenses, "original → why it’s a problem → rewrite." Feedback has to be rankable and end in a verdict.',
-  },
-  {
-    move: 'Calibrate with a bad→good example.',
-    detail:
-      'vague: "…" → on-brand: "…". Voice is taught by demonstration, not adjectives.',
-  },
-  {
-    move: 'Build in an acceptance test.',
-    detail:
-      'A pass/fail the output must clear — "would the target audience know why to act?"',
+      'A single line that refuses the obvious. Flag what a competitor could claim, name the cost of a choice, rank by impact, cut the filler.',
   },
 ]
 
@@ -55,22 +35,26 @@ export default function MethodPage() {
       <h1 className="font-serif text-3xl font-medium tracking-tight text-ink">
         The method
       </h1>
-      <p className="mt-5 text-[15px] leading-relaxed text-muted">
-        A house style is a rulebook for voice. Every prompt here is written to the
-        same one — these are the moves that recur. Curation is the product; so is
-        consistency.
+      <p className="mt-5 font-serif text-lg leading-relaxed text-ink">
+        Curation is the product.
+      </p>
+      <p className="mt-3 text-[15px] leading-relaxed text-muted">
+        A prompt earns its place here only if it clears a four-part bar. Each one
+        assigns a role, takes variables, returns a structured deliverable, and
+        includes one instruction that pushes for a sharper answer than the obvious
+        one.
       </p>
 
       <ol className="mt-8 space-y-6">
-        {MOVES.map((m, i) => (
-          <li key={m.move} className="flex gap-4">
+        {BAR.map((b, i) => (
+          <li key={b.part} className="flex gap-4">
             <span className="mt-0.5 font-serif text-lg leading-none text-accent tabular-nums">
               {String(i + 1).padStart(2, '0')}
             </span>
             <div>
-              <p className="font-medium text-ink">{m.move}</p>
+              <p className="font-medium text-ink">{b.part}</p>
               <p className="mt-1 text-[15px] leading-relaxed text-muted">
-                {m.detail}
+                {b.detail}
               </p>
             </div>
           </li>
@@ -79,7 +63,7 @@ export default function MethodPage() {
 
       <div className="mt-10 text-sm">
         <Link href="/" className="text-accent hover:underline">
-          ← Back to the library
+          Back to the library
         </Link>
       </div>
     </main>

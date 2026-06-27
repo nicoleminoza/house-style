@@ -15,13 +15,28 @@
   .font-serif {
     letter-spacing: -0.012em;
   }
+
+  /* WCAG 2.1 AA: a clearly visible keyboard focus indicator on every
+     interactive element. 2px oxblood outline with a small offset. */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible,
+  summary:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid #8a2b1e;
+    outline-offset: 2px;
+    border-radius: 3px;
+  }
 }
 
 @layer utilities {
+  /* Focus is handled globally via :focus-visible above; this class is a no-op
+     kept so existing references stay valid. */
   .ring-focus {
-    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 focus-visible:ring-offset-2 focus-visible:ring-offset-canvas;
+    outline-offset: 2px;
   }
-  /* subtle grid hairline used on cards/sections */
   .hairline {
     @apply border border-line;
   }

@@ -18,7 +18,7 @@ export async function unlockPayload(slug: string): Promise<string | null> {
  * wrapper. No-op until Supabase is wired. Stores the typed props in `metadata`.
  *
  * PRIVACY: callers only ever pass typed, non-sensitive props (ids, booleans,
- * enums, variable KEYS — never variable values or pasted text).
+ * enums, variable KEYS: never variable values or pasted text).
  */
 export async function logEvent(
   event: string,

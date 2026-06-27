@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'About — House Style',
+  title: 'About, House Style',
   description:
     'Why House Style exists, and how Nicole Miñoza approaches product. Curation is the product.',
 }
@@ -13,7 +13,14 @@ export default function AboutPage() {
         About
       </h1>
 
-      <div className="mt-6 space-y-5 text-[15px] leading-relaxed text-muted">
+      <p className="mt-6 font-serif text-lg leading-relaxed text-ink">
+        I led product and product marketing for creative software that scaled to
+        15M+ MAU, and prompting became part of how I work. This is the curated
+        set. Each prompt assigns a role, takes variables, and asks for a sharper
+        answer than the obvious one. Curation is the product.
+      </p>
+
+      <div className="mt-8 space-y-5 text-[15px] leading-relaxed text-muted">
         <p>
           Most prompt collections are large and unfiltered. This one is small and
           filtered: every prompt is here for a reason.
@@ -28,10 +35,8 @@ export default function AboutPage() {
         </p>
         <p>
           It also shows how I approach product: scope tightly, make the first try
-          a win, and treat curation as the product. Built in Next.js and Supabase;
-          the prompts live in a typed source file and curation happens in code
-          review. The library is fully open — the gate sits on the workflow, not
-          the ideas.
+          a win, and treat curation as the product. Built in React. The prompts
+          live in a typed data file, and curation happens in code review.
         </p>
         <p className="font-serif text-ink">Nicole Miñoza</p>
       </div>
@@ -43,10 +48,10 @@ export default function AboutPage() {
           rel="noreferrer"
           className="text-accent hover:underline"
         >
-          nicoleminoza.com ↗
+          nicoleminoza.com
         </a>
         <Link href="/method" className="text-muted hover:text-accent">
-          Read the method →
+          Read the method
         </Link>
       </div>
     </main>

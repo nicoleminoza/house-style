@@ -55,7 +55,7 @@ export function Sandbox({
   }
 
   // THE GATE. Reading + filling + copying is free; *saving* your filled versions
-  // requires an account — that's the additive, premium workflow. Fires the
+  // requires an account, that's the additive, premium workflow. Fires the
   // conversion funnel event. (Redirects to /sign-in once auth is built.)
   function handleSave() {
     if (!active) return
@@ -72,7 +72,7 @@ export function Sandbox({
     window.location.href = '/sign-in?next=/demo'
   }
 
-  // PRIVACY: we track only that a variable changed (its KEY) — never the value.
+  // PRIVACY: we track only that a variable changed (its KEY), never the value.
   function handleBlur(variableKey: string) {
     const current = values[variableKey] ?? ''
     if (current !== focusValue.current && current.trim() !== '') {
@@ -154,18 +154,19 @@ export function Sandbox({
               <button
                 type="button"
                 onClick={handleCopy}
-                className={`ring-focus rounded border px-3 py-1.5 text-xs font-medium transition-colors ${
+                aria-label={copied ? 'Copied' : 'Copy the filled prompt'}
+                className={`inline-flex min-h-[40px] items-center rounded border px-3 text-xs font-medium transition-colors ${
                   copied
                     ? 'border-accent bg-accent text-surface'
                     : 'border-line text-muted hover:border-accent/30 hover:text-accent'
                 }`}
               >
-                {copied ? 'Copied!' : 'Copy filled prompt'}
+                {copied ? 'Copied' : 'Copy filled prompt'}
               </button>
               <button
                 type="button"
                 onClick={handleSave}
-                className="ring-focus rounded border border-accent/40 px-3 py-1.5 text-xs font-medium text-accent transition-colors hover:bg-accent hover:text-surface"
+                className="inline-flex min-h-[40px] items-center rounded border border-accent/40 px-3 text-xs font-medium text-accent transition-colors hover:bg-accent hover:text-surface"
               >
                 Save my version
               </button>
@@ -173,7 +174,7 @@ export function Sandbox({
           </div>
           {gated && (
             <p className="mt-2 text-right text-[11px] text-accent">
-              🔒 Sign in to save your filled prompts — coming soon.
+              🔒 Sign in to save your filled prompts, coming soon.
             </p>
           )}
           <pre className="mt-2 whitespace-pre-wrap rounded border border-line bg-surface px-4 py-3.5 font-sans text-[13px] leading-relaxed text-ink">

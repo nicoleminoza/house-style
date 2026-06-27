@@ -57,7 +57,7 @@ export default function SignInPage() {
       </h1>
       <p className="mt-3 text-[15px] leading-relaxed text-muted">
         Save your filled prompts and unlock the hero builders. The library itself
-        is free — no sign-in needed to read or copy.
+        is free, no sign-in needed to read or copy.
       </p>
 
       {!hasSupabase ? (
@@ -67,7 +67,7 @@ export default function SignInPage() {
         </div>
       ) : sent ? (
         <div className="mt-8 rounded-md border border-accent/30 bg-accent-tint/40 p-5 text-sm text-ink">
-          Check your email — we sent a sign-in link to{' '}
+          Check your email, we sent a sign-in link to{' '}
           <span className="font-medium">{email}</span>.
         </div>
       ) : (
@@ -94,7 +94,7 @@ export default function SignInPage() {
               {busy ? 'Sending…' : 'Email me a sign-in link'}
             </button>
             <p className="text-[11px] text-faint">
-              No password — we email you a one-tap link.
+              No password, we email you a one-tap link.
             </p>
           </form>
 
@@ -107,13 +107,13 @@ export default function SignInPage() {
           <div className="flex gap-2">
             <button
               onClick={() => oauth('google')}
-              className="ring-focus flex-1 rounded-md border border-line bg-surface px-3 py-2 text-xs text-muted transition-colors hover:border-accent/30 hover:text-ink"
+              className="inline-flex min-h-[40px] flex-1 items-center justify-center rounded-md border border-line bg-surface px-3 text-xs text-muted transition-colors hover:border-accent/30 hover:text-ink"
             >
               Google
             </button>
             <button
               onClick={() => oauth('linkedin_oidc')}
-              className="ring-focus flex-1 rounded-md border border-line bg-surface px-3 py-2 text-xs text-muted transition-colors hover:border-accent/30 hover:text-ink"
+              className="inline-flex min-h-[40px] flex-1 items-center justify-center rounded-md border border-line bg-surface px-3 text-xs text-muted transition-colors hover:border-accent/30 hover:text-ink"
             >
               LinkedIn
             </button>
@@ -123,8 +123,8 @@ export default function SignInPage() {
         </div>
       )}
 
-      <Link href="/" className="ring-focus mt-8 inline-block rounded text-sm text-accent hover:underline">
-        ← Back to the library
+      <Link href="/" className="mt-8 inline-block rounded text-sm text-accent hover:underline">
+        Back to the library
       </Link>
     </main>
   )

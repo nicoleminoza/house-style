@@ -16,7 +16,7 @@ export function QualitySignal({ promptId }: { promptId: string }) {
   if (voted) {
     return (
       <p className="mt-3 text-xs text-faint">
-        Thanks — logged your {voted === 'positive' ? '👍' : '👎'}.
+        Thanks, logged your {voted === 'positive' ? '👍' : '👎'}.
       </p>
     )
   }

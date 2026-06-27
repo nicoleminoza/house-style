@@ -14,9 +14,8 @@ const CATEGORY_BADGE: Record<string, string> = {
   'AI & Creative Tools': 'bg-[#E7ECEE] text-[#33414A]',
 }
 
-// The whole curated library is public + instantly copyable — it's the portfolio
-// proof and the engine of copy/feedback telemetry. The Tier-2 gate lives on the
-// workflow (the Sandbox), not here.
+// The whole curated library is public and instantly copyable. The Tier-2 gate
+// lives on the workflow (the Sandbox), not here.
 export function PromptCard({
   prompt,
   isAuthed,
@@ -28,6 +27,7 @@ export function PromptCard({
   const [copied, setCopied] = useState(false)
   const payload = prompt.payload ?? ''
   const { showUseCaseSurvey } = useToast()
+  const panelId = `prompt-panel-${prompt.slug}`
 
   async function handleCopy() {
     if (!payload) return
@@ -46,7 +46,8 @@ export function PromptCard({
 
   return (
     <article
-      className={`flex flex-col rounded-md border bg-surface p-5 transition-colors hover:border-accent/30 ${
+      id={`prompt-${prompt.slug}`}
+      className={`flex scroll-mt-28 flex-col rounded-md border bg-surface p-5 transition-colors hover:border-accent/30 ${
         isHero(prompt.slug) ? 'border-accent/40' : 'border-line'
       }`}
     >
@@ -66,14 +67,16 @@ export function PromptCard({
       </div>
 
       <h3 className="mt-3 font-serif text-lg font-medium leading-snug text-ink">
-        {prompt.title}
+        <a href={`#prompt-${prompt.slug}`} className="hover:text-accent">
+          {prompt.title}
+        </a>
       </h3>
       <p className="mt-1.5 text-sm leading-relaxed text-muted">
         {prompt.description}
       </p>
 
       {prompt.variables.length > 0 && (
-        <p className="mt-3 text-[11px] text-faint">
+        <p className="mt-3 text-[11px] text-muted">
           {prompt.variables.length} variable
           {prompt.variables.length === 1 ? '' : 's'} to fill
         </p>
@@ -83,25 +86,28 @@ export function PromptCard({
         <button
           type="button"
           onClick={handleCopy}
-          className={`ring-focus inline-flex items-center gap-1.5 rounded border px-3 py-1.5 text-xs font-medium transition-colors ${
+          aria-label={copied ? 'Copied' : `Copy the ${prompt.title} prompt`}
+          className={`inline-flex min-h-[40px] items-center gap-1.5 rounded border px-3 text-xs font-medium transition-colors ${
             copied
               ? 'border-accent bg-accent text-surface'
               : 'border-line text-muted hover:border-accent/30 hover:text-accent'
           }`}
         >
-          {copied ? 'Copied!' : 'Copy'}
+          {copied ? 'Copied' : 'Copy'}
         </button>
         <button
           type="button"
           onClick={() => setExpanded((v) => !v)}
-          className="ring-focus rounded px-2 py-1.5 text-xs font-medium text-accent transition-colors hover:underline"
+          aria-expanded={expanded}
+          aria-controls={panelId}
+          className="inline-flex min-h-[40px] items-center rounded px-2 text-xs font-medium text-accent transition-colors hover:underline"
         >
           {expanded ? 'Hide prompt' : 'Show full prompt'}
         </button>
       </div>
 
       {expanded && (
-        <div className="mt-3">
+        <div className="mt-3" id={panelId}>
           <pre className="whitespace-pre-wrap rounded border border-line bg-canvas px-3.5 py-3 font-sans text-[13px] leading-relaxed text-ink">
             {payload}
           </pre>
@@ -111,7 +117,7 @@ export function PromptCard({
 
       <div className="mt-4 flex flex-wrap gap-x-2 gap-y-1 border-t border-line pt-3">
         {prompt.tags.map((tag) => (
-          <span key={tag} className="text-[11px] text-faint">
+          <span key={tag} className="text-[11px] text-muted">
             #{tag}
           </span>
         ))}
