@@ -15,12 +15,12 @@ const BAR: { part: string; detail: string }[] = [
   {
     part: '[BRACKET] variables',
     detail:
-      'Fill-in slots carry your product, audience, and real facts into the prompt, so it adapts to your situation instead of returning something generic.',
+      'Fill-in slots carry your product, audience, and real facts into the prompt, so it adapts to your situation instead of a one-size-fits-all answer.',
   },
   {
     part: 'A structured deliverable',
     detail:
-      'The output shape is dictated: numbered sections in an explicit order, so the answer arrives usable, not as a wall of text you have to mine.',
+      'Every prompt dictates the output shape: numbered sections in a set order, so the answer arrives usable instead of a wall of text you have to mine.',
   },
   {
     part: 'One instruction that pushes for a sharper answer',
@@ -39,10 +39,7 @@ export default function MethodPage() {
         Curation is the product.
       </p>
       <p className="mt-3 text-[15px] leading-relaxed text-muted">
-        A prompt earns its place here only if it clears a four-part bar. Each one
-        assigns a role, takes variables, returns a structured deliverable, and
-        includes one instruction that pushes for a sharper answer than the obvious
-        one.
+        A prompt earns its place here only if it clears a four-part bar.
       </p>
 
       <ol className="mt-8 space-y-6">
