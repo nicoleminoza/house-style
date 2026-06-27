@@ -9,15 +9,17 @@ export function Logo({ className = '' }: { className?: string }) {
       aria-label="House Style"
     >
       <rect width="64" height="64" rx="12" fill="#6b2c41" />
+      {/* Baseline placed by cap-height so the H is optically centered in all
+          renderers (avoids dominant-baseline, which centers the em box and
+          drops the cap low). y = (64 + capHeight≈30.5) / 2 ≈ 47.25 */}
       <text
         x="32"
-        y="34.5"
+        y="47.25"
         fill="#faf6f1"
         fontFamily="Georgia, 'Times New Roman', serif"
         fontWeight="600"
         fontSize="44"
         textAnchor="middle"
-        dominantBaseline="central"
       >
         H
       </text>
