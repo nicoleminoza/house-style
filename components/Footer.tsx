@@ -54,7 +54,14 @@ export function Footer() {
           )}
         </form>
 
-        <div className="mt-10">
+        <p className="mt-10 max-w-xl text-sm leading-relaxed text-muted">
+          I led product and product marketing for creative software that scaled
+          to 15M+ MAU, and prompting became part of how I work. This is the
+          curated set. Each prompt assigns a role, takes variables, and asks for a
+          sharper answer than the obvious one. Curation is the product.
+        </p>
+
+        <div className="mt-8">
           <p className="font-serif text-lg font-medium text-ink">House Style</p>
           <p className="mt-1 text-sm text-muted">A project by Nicole Miñoza.</p>
         </div>

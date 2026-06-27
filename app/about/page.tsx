@@ -13,18 +13,12 @@ export default function AboutPage() {
         About
       </h1>
 
-      <p className="mt-6 font-serif text-lg leading-relaxed text-ink">
-        I led product and product marketing for creative software that scaled to
-        15M+ MAU, and prompting became part of how I work. This is the curated
-        set. Each prompt assigns a role, takes variables, and asks for a sharper
-        answer than the obvious one. Curation is the product.
+      <p className="mt-6 text-lg leading-relaxed text-ink">
+        Most prompt collections are large and unfiltered. This one is small and
+        filtered: every prompt is here for a reason.
       </p>
 
-      <div className="mt-8 space-y-5 text-[15px] leading-relaxed text-muted">
-        <p>
-          Most prompt collections are large and unfiltered. This one is small and
-          filtered: every prompt is here for a reason.
-        </p>
+      <div className="mt-5 space-y-5 text-[15px] leading-relaxed text-muted">
         <p>
           I spent 23 years in the creative-software industry, most recently
           leading product and product marketing for tools that scaled to 15M+
