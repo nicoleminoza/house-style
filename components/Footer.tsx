@@ -4,8 +4,6 @@ import { useState } from 'react'
 
 const LINKS = [
   { label: 'nicoleminoza.com', href: 'https://nicoleminoza.com', primary: true },
-  { label: 'Résumé', href: 'https://nicoleminoza.com/resume.html' },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/nicoleminoza' },
   { label: 'GitHub', href: 'https://github.com/nicoleminoza/house-style' },
   { label: 'Email', href: 'mailto:hello@nicoleminoza.com' },
 ]
