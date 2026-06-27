@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-canvas text-ink font-sans;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .font-serif {
+    letter-spacing: -0.012em;
+  }
+}
+
+@layer utilities {
+  .ring-focus {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 focus-visible:ring-offset-2 focus-visible:ring-offset-canvas;
+  }
+  /* subtle grid hairline used on cards/sections */
+  .hairline {
+    @apply border border-line;
+  }
+}

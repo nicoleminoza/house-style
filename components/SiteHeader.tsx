@@ -1,0 +1,56 @@
+import Link from 'next/link'
+import { hasSupabase } from '@/lib/env'
+import { getIsAuthed } from '@/lib/prompts'
+import { AuthControls } from './AuthControls'
+
+// Public nav. The private Dashboard is added only for signed-in viewers below.
+const NAV = [
+  { href: '/', label: 'Library' },
+  { href: '/demo', label: 'Sandbox' },
+  { href: '/method', label: 'Method' },
+  { href: '/about', label: 'About' },
+]
+
+export async function SiteHeader() {
+  const isAuthed = hasSupabase ? await getIsAuthed() : false
+
+  return (
+    <header className="sticky top-0 z-20 border-b border-line bg-canvas/85 backdrop-blur supports-[backdrop-filter]:bg-canvas/70">
+      <div className="mx-auto flex max-w-shell items-center justify-between px-6 py-4">
+        <Link href="/" className="ring-focus rounded-sm">
+          <span className="font-serif text-lg font-medium tracking-tight text-ink">
+            House&nbsp;Style
+          </span>
+          <span className="ml-2 hidden text-xs text-faint sm:inline">
+            Prompts with a point of view
+          </span>
+        </Link>
+
+        <nav className="flex items-center gap-1 text-sm">
+          {NAV.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="ring-focus rounded px-3 py-1.5 text-muted transition-colors hover:text-accent"
+            >
+              {item.label}
+            </Link>
+          ))}
+          {isAuthed && (
+            <Link
+              href="/dashboard"
+              className="ring-focus rounded px-3 py-1.5 text-muted transition-colors hover:text-accent"
+            >
+              Dashboard
+            </Link>
+          )}
+          {hasSupabase && (
+            <span className="ml-1 border-l border-line pl-2">
+              <AuthControls isAuthed={isAuthed} />
+            </span>
+          )}
+        </nav>
+      </div>
+    </header>
+  )
+}

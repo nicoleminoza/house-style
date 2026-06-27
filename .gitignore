@@ -1,0 +1,16 @@
+/node_modules
+/.next
+/out
+/build
+.DS_Store
+*.pem
+npm-debug.log*
+.env
+.env*.local
+next-env.d.ts
+.vercel
+*.tsbuildinfo
+
+# Internal strategy / working docs — local only, not in the public repo
+/PROJECT-BRIEF.md
+/docs/
