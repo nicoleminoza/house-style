@@ -57,7 +57,7 @@ export function Footer() {
           <div>
             <p className="font-serif text-lg font-medium text-ink">House Style</p>
             <p className="mt-1 text-sm text-muted">
-              A project by Nicole Miñoza · Seattle, WA
+              A project by Nicole Miñoza
             </p>
           </div>
 
