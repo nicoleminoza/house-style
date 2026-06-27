@@ -26,7 +26,7 @@ export async function SiteHeader() {
           <span className="font-serif text-lg font-medium tracking-tight text-ink">
             House&nbsp;Style
           </span>
-          <span className="ml-1 hidden text-xs text-faint sm:inline">
+          <span className="ml-1 hidden text-xs text-muted sm:inline">
             Prompts with a point of view
           </span>
         </Link>

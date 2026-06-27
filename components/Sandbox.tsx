@@ -115,7 +115,7 @@ export function Sandbox({
                 }`}
               >
                 {p.title}
-                <span className="mt-0.5 block text-[10px] text-faint">
+                <span className="mt-0.5 block text-[10px] text-muted">
                   {p.category}
                 </span>
               </button>
@@ -142,14 +142,14 @@ export function Sandbox({
                   }
                   onBlur={() => handleBlur(key)}
                   placeholder={`[${key}]`}
-                  className="ring-focus w-full rounded border border-line bg-surface px-2.5 py-1.5 text-sm text-ink placeholder:text-faint focus:border-accent/40"
+                  className="ring-focus w-full rounded border border-line bg-surface px-2.5 py-1.5 text-sm text-ink placeholder:text-muted focus:border-accent/40"
                 />
               </label>
             ))}
           </div>
 
           <div className="mt-5 flex items-center justify-between">
-            <span className="text-xs text-faint">Live preview</span>
+            <span className="text-xs text-muted">Live preview</span>
             <div className="flex items-center gap-2">
               <button
                 type="button"

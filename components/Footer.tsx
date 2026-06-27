@@ -44,7 +44,7 @@ export function Footer() {
           </nav>
         </div>
 
-        <p className="mt-8 border-t border-line pt-6 text-xs text-faint">
+        <p className="mt-8 border-t border-line pt-6 text-xs text-muted">
           Typeset in <span className="font-serif text-muted">Fraunces</span> and{' '}
           <span className="font-sans text-muted">Inter</span>.
         </p>

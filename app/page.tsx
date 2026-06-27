@@ -27,7 +27,7 @@ export default async function HomePage() {
           Curation is the product.
         </p>
 
-        <div className="mt-6 space-y-1 text-sm text-faint">
+        <div className="mt-6 space-y-1 text-sm text-muted">
           <p>
             {prompts.length} prompts across 3 categories, including {heroCount}{' '}
             hero frameworks · Free, no login

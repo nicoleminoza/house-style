@@ -105,7 +105,7 @@ export function Catalog({
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search by title, description, or tag…"
           aria-label="Search prompts"
-          className="w-full rounded-md border border-line bg-surface px-4 py-2.5 text-sm text-ink transition-colors placeholder:text-faint focus:border-accent/40"
+          className="w-full rounded-md border border-line bg-surface px-4 py-2.5 text-sm text-ink transition-colors placeholder:text-muted focus:border-accent/40"
         />
 
         <div className="mt-4 flex flex-wrap items-center gap-2">
@@ -128,7 +128,7 @@ export function Catalog({
                 {cat}
                 <span
                   aria-hidden
-                  className={active ? 'text-surface/70' : 'text-muted'}
+                  className={active ? 'text-surface' : 'text-muted'}
                 >
                   {count}
                 </span>
@@ -182,6 +182,7 @@ export function Catalog({
         </div>
       </div>
 
+      <h2 className="sr-only">Prompt library</h2>
       <p className="py-5 text-xs text-muted" aria-live="polite">
         {results.length === prompts.length
           ? `${prompts.length} prompts`

@@ -108,7 +108,7 @@ export function PromptCard({
 
       {expanded && (
         <div className="mt-3" id={panelId}>
-          <pre className="whitespace-pre-wrap rounded border border-line bg-canvas px-3.5 py-3 font-sans text-[13px] leading-relaxed text-ink">
+          <pre className="max-h-80 overflow-y-auto whitespace-pre-wrap rounded border border-line bg-canvas px-3.5 py-3 font-sans text-[13px] leading-relaxed text-ink">
             {payload}
           </pre>
           <QualitySignal promptId={prompt.slug} />

@@ -84,7 +84,7 @@ export default function SignInPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@company.com"
-              className="ring-focus w-full rounded-md border border-line bg-surface px-3.5 py-2.5 text-sm text-ink placeholder:text-faint focus:border-accent/40"
+              className="ring-focus w-full rounded-md border border-line bg-surface px-3.5 py-2.5 text-sm text-ink placeholder:text-muted focus:border-accent/40"
             />
             <button
               type="submit"
@@ -93,13 +93,13 @@ export default function SignInPage() {
             >
               {busy ? 'Sending…' : 'Email me a sign-in link'}
             </button>
-            <p className="text-[11px] text-faint">
+            <p className="text-[11px] text-muted">
               No password, we email you a one-tap link.
             </p>
           </form>
 
           {/* Secondary, de-emphasized: social providers */}
-          <div className="flex items-center gap-3 text-[11px] uppercase tracking-wide text-faint">
+          <div className="flex items-center gap-3 text-[11px] uppercase tracking-wide text-muted">
             <span className="h-px flex-1 bg-line" /> or continue with{' '}
             <span className="h-px flex-1 bg-line" />
           </div>

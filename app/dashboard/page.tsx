@@ -67,7 +67,7 @@ export default async function DashboardPage() {
       </p>
 
       {!hasSupabaseAdmin && (
-        <p className="mt-2 text-xs text-faint">
+        <p className="mt-2 text-xs text-muted">
           Add <code>SUPABASE_SERVICE_ROLE_KEY</code> to light up live numbers.
         </p>
       )}
@@ -104,7 +104,7 @@ function Metric({
 }) {
   return (
     <div className="rounded-md border border-line bg-surface p-5">
-      <p className="text-xs text-faint">{label}</p>
+      <p className="text-xs text-muted">{label}</p>
       <p className="mt-2 font-serif text-3xl text-ink tabular-nums">{value}</p>
       {sub && <p className="mt-1 truncate text-[11px] text-muted">{sub}</p>}
     </div>

@@ -51,6 +51,16 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
     timer.current = setTimeout(() => setToast(null), VISIBLE_MS)
   }, [])
 
+  // WCAG 2.2.1: pause the auto-dismiss while the user is hovering or has
+  // focus inside the toast, so the micro-survey can't vanish mid-interaction.
+  const pause = useCallback(() => {
+    if (timer.current) clearTimeout(timer.current)
+  }, [])
+  const resume = useCallback(() => {
+    if (timer.current) clearTimeout(timer.current)
+    timer.current = setTimeout(() => setToast(null), VISIBLE_MS)
+  }, [])
+
   useEffect(() => () => void (timer.current && clearTimeout(timer.current)), [])
 
   function submit(useCase: UseCase) {
@@ -70,6 +80,10 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
         <div
           role="status"
           aria-live="polite"
+          onMouseEnter={pause}
+          onMouseLeave={resume}
+          onFocus={pause}
+          onBlur={resume}
           className="fixed bottom-5 right-5 z-50 w-[19rem] rounded-md border border-line bg-surface p-4 shadow-[0_8px_30px_rgba(0,0,0,0.08)]"
         >
           <div className="flex items-start justify-between gap-3">
@@ -78,7 +92,7 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
               type="button"
               onClick={clear}
               aria-label="Dismiss"
-              className="ring-focus -mr-1 -mt-1 rounded p-1 text-faint transition-colors hover:text-ink"
+              className="ring-focus -mr-1 -mt-1 rounded p-1 text-muted transition-colors hover:text-ink"
             >
               ✕
             </button>
