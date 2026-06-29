@@ -28,7 +28,7 @@ npm run dev   # http://localhost:3000
 ```
 
 Without Supabase env vars the app falls back to [supabase/seed.json](supabase/seed.json)
-(the 41-prompt library exported from the source data file). Premium prompts show
+(the library of more than 40 prompts exported from the source data file). Premium prompts show
 a locked state.
 
 ## Wire up the backend
