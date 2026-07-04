@@ -28,30 +28,35 @@ export async function SiteHeader() {
           </span>
         </Link>
 
-        <nav className="flex min-w-0 items-center gap-1 overflow-x-auto whitespace-nowrap pl-2 text-sm [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-          {NAV.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="shrink-0 rounded px-3 py-1.5 text-muted transition-colors hover:text-accent"
-            >
-              {item.label}
-            </Link>
-          ))}
-          {isAuthed && (
-            <Link
-              href="/dashboard"
-              className="shrink-0 rounded px-3 py-1.5 text-muted transition-colors hover:text-accent"
-            >
-              Dashboard
-            </Link>
-          )}
+        {/* Section links scroll horizontally on narrow screens; the auth control
+            is pinned outside that strip so the primary CTA is never scrolled
+            off-screen on mobile. */}
+        <div className="flex min-w-0 items-center gap-2 pl-2">
+          <nav className="flex min-w-0 items-center gap-1 overflow-x-auto whitespace-nowrap text-sm [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {NAV.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="shrink-0 rounded px-3 py-1.5 text-muted transition-colors hover:text-accent"
+              >
+                {item.label}
+              </Link>
+            ))}
+            {isAuthed && (
+              <Link
+                href="/dashboard"
+                className="shrink-0 rounded px-3 py-1.5 text-muted transition-colors hover:text-accent"
+              >
+                Dashboard
+              </Link>
+            )}
+          </nav>
           {hasSupabase && (
-            <span className="ml-1 shrink-0 border-l border-line pl-2">
+            <span className="shrink-0 border-l border-line pl-2">
               <AuthControls isAuthed={isAuthed} />
             </span>
           )}
-        </nav>
+        </div>
       </div>
     </header>
   )
