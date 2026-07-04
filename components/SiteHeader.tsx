@@ -3,6 +3,7 @@ import { hasSupabase } from '@/lib/env'
 import { getIsAuthed } from '@/lib/prompts'
 import { AuthControls } from './AuthControls'
 import { Logo } from './Logo'
+import { MobileNav } from './MobileNav'
 
 // Public nav. The private Dashboard is added only for signed-in viewers below.
 const NAV = [
@@ -14,9 +15,13 @@ const NAV = [
 
 export async function SiteHeader() {
   const isAuthed = hasSupabase ? await getIsAuthed() : false
+  const items = isAuthed
+    ? [...NAV, { href: '/dashboard', label: 'Dashboard' }]
+    : NAV
 
   return (
-    <header className="sticky top-0 z-20 border-b border-line bg-canvas/85 backdrop-blur supports-[backdrop-filter]:bg-canvas/70">
+    // relative: the MobileNav panel hangs off this sticky header (top-full).
+    <header className="relative sticky top-0 z-20 border-b border-line bg-canvas/85 backdrop-blur supports-[backdrop-filter]:bg-canvas/70">
       <div className="mx-auto flex max-w-shell items-center justify-between px-6 py-4">
         <Link
           href="/"
@@ -28,12 +33,12 @@ export async function SiteHeader() {
           </span>
         </Link>
 
-        {/* Section links scroll horizontally on narrow screens; the auth control
-            is pinned outside that strip so the primary CTA is never scrolled
-            off-screen on mobile. */}
+        {/* Desktop: inline section links. Mobile: the links move into the
+            MobileNav disclosure; the auth control stays pinned in the bar so
+            the primary CTA is always visible. */}
         <div className="flex min-w-0 items-center gap-2 pl-2">
-          <nav className="flex min-w-0 items-center gap-1 overflow-x-auto whitespace-nowrap text-sm [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-            {NAV.map((item) => (
+          <nav className="hidden items-center gap-1 text-sm sm:flex">
+            {items.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -42,20 +47,13 @@ export async function SiteHeader() {
                 {item.label}
               </Link>
             ))}
-            {isAuthed && (
-              <Link
-                href="/dashboard"
-                className="shrink-0 rounded px-3 py-1.5 text-muted transition-colors hover:text-accent"
-              >
-                Dashboard
-              </Link>
-            )}
           </nav>
           {hasSupabase && (
-            <span className="shrink-0 border-l border-line pl-2">
+            <span className="shrink-0 sm:border-l sm:border-line sm:pl-2">
               <AuthControls isAuthed={isAuthed} />
             </span>
           )}
+          <MobileNav items={items} />
         </div>
       </div>
     </header>
