@@ -6,6 +6,7 @@ import { getSiteContext } from '@/lib/site-context'
 // reads as a Make It Land piece rather than a personal one.
 export function Footer() {
   const site = getSiteContext()
+  const year = new Date().getFullYear()
   const LINKS = [
     { label: site.footerPrimaryLabel, href: site.footerPrimaryUrl, primary: true },
     { label: 'GitHub', href: 'https://github.com/nicoleminoza/house-style' },
@@ -39,7 +40,7 @@ export function Footer() {
                   className={
                     l.primary
                       ? 'font-medium text-ink underline decoration-line underline-offset-4 hover:text-accent'
-                      : 'hover:text-accent'
+                      : 'underline decoration-line underline-offset-4 hover:text-accent'
                   }
                 >
                   {l.label}
@@ -49,11 +50,14 @@ export function Footer() {
           </nav>
         </div>
 
-        <p className="mt-8 border-t border-line pt-6 text-xs text-muted">
-          Typeset in <span className="font-serif italic">Newsreader</span>,{' '}
-          <span className="font-sans">Hanken Grotesk</span>, and{' '}
-          <span className="font-mono">Spline Sans Mono</span>.
-        </p>
+        <div className="mt-8 flex flex-col gap-2 border-t border-line pt-6 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            Typeset in <span className="font-serif italic">Newsreader</span>,{' '}
+            <span className="font-sans">Hanken Grotesk</span>, and{' '}
+            <span className="font-mono">Spline Sans Mono</span>.
+          </p>
+          <p>© {year} {site.bylineName}</p>
+        </div>
       </div>
     </footer>
   )
