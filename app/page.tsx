@@ -1,5 +1,13 @@
+import type { Metadata } from 'next'
 import { Catalog } from '@/components/Catalog'
 import { getCatalogForClient, getIsAuthed } from '@/lib/prompts'
+import { getSiteContext, getSiteOrigin } from '@/lib/site-context'
+
+// Self-referential canonical for the homepage, on whichever host served it.
+// Scoped to this segment so it never leaks onto subpages (/about, /demo, …).
+export function generateMetadata(): Metadata {
+  return { alternates: { canonical: getSiteOrigin() } }
+}
 
 // Server Component: payloads are resolved (and gated) on the server before any
 // markup reaches the browser. Locked premium payloads are never serialized.
@@ -8,6 +16,7 @@ export default async function HomePage() {
     getCatalogForClient(),
     getIsAuthed(),
   ])
+  const site = getSiteContext()
 
   return (
     <main className="mx-auto max-w-shell px-6">
@@ -15,12 +24,12 @@ export default async function HomePage() {
         <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-accent-2">
           A project by{' '}
           <a
-            href="https://nicoleminoza.com"
+            href={site.bylineUrl}
             target="_blank"
             rel="noreferrer"
             className="hover:text-accent"
           >
-            Nicole Miñoza
+            {site.bylineName}
           </a>
         </p>
         <h1 className="mt-3 font-serif text-5xl font-medium tracking-tight text-ink">

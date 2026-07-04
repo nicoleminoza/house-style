@@ -8,6 +8,7 @@ import { SiteHeader } from '@/components/SiteHeader'
 import { Footer } from '@/components/Footer'
 import { AuthEvents } from '@/components/AuthEvents'
 import { getIsAuthed } from '@/lib/prompts'
+import { getSiteOrigin } from '@/lib/site-context'
 
 const newsreader = Newsreader({
   subsets: ['latin'],
@@ -29,26 +30,31 @@ const splineMono = Spline_Sans_Mono({
   display: 'swap',
 })
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'
 const description =
   'AI prompts for marketing, brand, and product leaders. Free, no login.'
 
-export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title: { default: 'House Style', template: '%s' },
-  description,
-  openGraph: {
-    title: 'House Style',
+// Resolved per-request so OG + canonical URLs stay on whichever host served the
+// page (personal domain vs. Make It Land subdomain), rather than a single build
+// -time value.
+export function generateMetadata(): Metadata {
+  const siteUrl = getSiteOrigin()
+  return {
+    metadataBase: new URL(siteUrl),
+    title: { default: 'House Style', template: '%s' },
     description,
-    siteName: 'House Style',
-    type: 'website',
-    url: siteUrl,
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'House Style',
-    description,
-  },
+    openGraph: {
+      title: 'House Style',
+      description,
+      siteName: 'House Style',
+      type: 'website',
+      url: siteUrl,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'House Style',
+      description,
+    },
+  }
 }
 
 export default async function RootLayout({

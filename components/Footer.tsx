@@ -1,19 +1,24 @@
-const LINKS = [
-  { label: 'nicoleminoza.com', href: 'https://nicoleminoza.com', primary: true },
-  { label: 'GitHub', href: 'https://github.com/nicoleminoza/house-style' },
-  { label: 'Email', href: 'mailto:hello@nicoleminoza.com' },
-]
+import { getSiteContext } from '@/lib/site-context'
 
-// Mirrors the structure of nicoleminoza.com's footer (identity, links, colophon)
+// Mirrors the structure of a personal-site footer (identity, links, colophon)
 // in House Style's own palette and type. No email capture, no extra zones.
+// Byline, primary link, and email resolve per-host so the studio subdomain
+// reads as a Make It Land piece rather than a personal one.
 export function Footer() {
+  const site = getSiteContext()
+  const LINKS = [
+    { label: site.footerPrimaryLabel, href: site.footerPrimaryUrl, primary: true },
+    { label: 'GitHub', href: 'https://github.com/nicoleminoza/house-style' },
+    { label: 'Email', href: site.email },
+  ]
+
   return (
     <footer className="mt-24 border-t border-line">
       <div className="mx-auto max-w-shell px-6 py-10">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="font-serif text-lg font-medium text-ink">House Style</p>
-            <p className="mt-0.5 text-sm text-muted">A project by Nicole Miñoza</p>
+            <p className="mt-0.5 text-sm text-muted">A project by {site.bylineName}</p>
           </div>
 
           <nav
