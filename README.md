@@ -47,4 +47,4 @@ Setup, architecture and routes are in [`DEVELOPMENT.md`](DEVELOPMENT.md).
 
 ## Author
 
-[Nicole Miñoza](https://nicoleminoza.com), product and product marketing leader. 23 years at Adobe, most recently Director of Product Management.
+[Nicole Miñoza](https://nicoleminoza.com), product and product marketing leader; former Adobe Director of Product Management.
