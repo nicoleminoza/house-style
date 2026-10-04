@@ -1,12 +1,12 @@
 # House Style
 
-**Prompts with a point of view.** A curated library of 44 AI prompts for marketing, brand, and product leaders.
+**Prompts with a point of view.** A curated AI workflow product for marketing, brand, and product leaders who want better output than generic prompt libraries.
 
 **Try it:** [housestyle.nicoleminoza.com](https://housestyle.nicoleminoza.com) · **Status:** pre-launch
 
 ![House Style prompt library](public/brand/readme-screenshot.png)
 
-## Who it's for, and why
+## The product, and why
 
 **For:** marketing, brand, and product leaders who already use AI and keep getting generic output.
 
@@ -14,7 +14,7 @@
 
 **Positioning:** small and curated, where most collections are large and unfiltered. Every prompt is here for a reason.
 
-## What's in it
+## What the product includes
 
 - **PMM/GTM (15):** positioning, messaging, launch tiering, competitive and win/loss work
 - **Executive (15):** decision memos, board updates, strategy on a page, change communication
@@ -22,7 +22,7 @@
 
 Three flagship prompts are full frameworks rather than single tasks: the **AI Launch Operating System**, the **Executive Voice Matrix**, and the **Positioning System**.
 
-## Product decisions
+## Product and growth decisions
 
 Each decision is a bet, with the signal that will confirm or reject it.
 
@@ -35,9 +35,13 @@ Each decision is a bet, with the signal that will confirm or reject it.
 
 PostHog tracks active users, sign-ups and copy events from day one, so every signal above is measurable at launch.
 
+## What I’m testing
+
+Whether a smaller, opinionated library drives more repeat use than a large generic collection; whether utility earns sign-in better than content gating; and whether interactive builders improve completion on the highest-value workflows.
+
 ## How it was built
 
-Built solo by directing Claude Code: product requirements, prompt writing and curation, information architecture, and the technical trade-offs. Next.js, Supabase and PostHog. The prompts live in a typed data file, so adding or cutting one is a reviewed change.
+Built solo by directing Claude Code across product requirements, prompt curation, information architecture, and technical trade-offs. The stack uses Next.js, Supabase, and PostHog; every prompt addition or removal is treated as a product decision, not a content update.
 
 Setup, architecture and routes are in [`DEVELOPMENT.md`](DEVELOPMENT.md).
 
