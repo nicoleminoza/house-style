@@ -1,7 +1,7 @@
 import seedJson from '@/supabase/seed.json'
 import type { PromptMeta, SeedRow } from './types'
 
-// The curated library, generated from the typed source in the Vite app.
+// The curated library, generated from the typed source in content/prompts.ts.
 // Used directly as the data source until Supabase is configured.
 export const seedRows = seedJson as SeedRow[]
 

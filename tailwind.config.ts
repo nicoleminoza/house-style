@@ -29,7 +29,7 @@ const config: Config = {
         mono: ['var(--font-spline-mono)', 'ui-monospace', 'monospace'],
       },
       borderRadius: {
-        // squarer than the Vite app — sharper lines
+        // squared corners, the one deliberate sub-brand tell
         DEFAULT: '4px',
         md: '6px',
         lg: '8px',
